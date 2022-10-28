@@ -1,12 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    // fontFamily: {
-    //   sans: ["Graphik", "sans-serif"],
-    //   serif: ["Merriweather", "serif"],
-    // },
-    extend: {},
+    fontFamily: {
+      sans: ["Lato", "sans-serif"],
+      serif: ["Merriweather", "serif"],
+    },
+    extend: {
+      colors: {
+        dark: "#08081A",
+        yellow: "#FCD13A",
+        salmon: "#F08B7A",
+        violet: "#535BF5",
+        "violet-light": "#9C9DE7",
+        pink: "#ED4B9E",
+      },
+    },
   },
   plugins: [],
 };

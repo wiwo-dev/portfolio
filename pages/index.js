@@ -1,7 +1,38 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import EmojiIconCircle from "../components/ui/EmojiIconCircle";
+import Heading from "../components/ui/Heading";
+import ProjectsPanel from "../components/ProjectsPanel";
 
 export default function Home() {
+  const ref = useRef(null);
+  let { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  let y = useTransform(scrollYProgress, [0, 1], ["-200px", "200px"]);
+  let roation = useTransform(scrollYProgress, [0, 1], ["-180deg", "180deg"]);
+  const [yState, setYState] = useState(y.get());
+  const [emoji, setEmoji] = useState("💻");
+  useEffect(
+    () =>
+      scrollYProgress.onChange((latest) => {
+        console.log(latest);
+        setYState(latest);
+        if (latest < 0.3) {
+          setEmoji("💻");
+        } else if (latest < 0.66) {
+          setEmoji("📜");
+        } else {
+          setEmoji("🎯");
+        }
+      }),
+    []
+  );
+
   return (
     <div className="">
       <Head>
@@ -15,6 +46,51 @@ export default function Home() {
         <p className="text-2xl my-16">I&apos;m Wojciech Więcławski</p>
       </main>
 
+      <section className="min-h-screen bg-yellow">
+        <div className="flex justify-center p-5">
+          <Heading className="">About me</Heading>
+        </div>
+        <div className="lg:flex relative max-w-7xl mx-auto " ref={ref}>
+          <div className="text-2xl p-8 lg:w-1/2">
+            <p className="">
+              I studied Computer Science (Engineer) and Management in Virtual Environments (Master) which gave me a deep
+              understanding of both the technical and business sides of digital projects.
+            </p>
+            <p className="mt-5">
+              I am a good communicator with developed soft skills. I can talk with all project stakeholders in business
+              and technical languages. I know what the budgeting process looks like, and I can set and track targets.
+            </p>
+
+            <p className="mt-5">
+              While working at at Red Bull I’ve been managing a team of 8 people, both employees, and freelancers
+              responsible for over 20 Social Media channels.
+            </p>
+            <p className="mt-5">
+              I also gained plenty of experience in all sorts of digital projects. From landing pages to complex systems
+              and platforms. Starting on those with a little budget which I coded some elements mainly by myself to
+              bigger ones in which I’ve been leading the project with help from a variety of external agencies.
+            </p>
+            <p className="mt-5">
+              I also gained plenty of experience in all sorts of digital projects. From landing pages to complex systems
+              and platforms. Starting on those with a little budget which I coded some elements mainly by myself to
+              bigger ones in which I’ve been leading the project with help from a variety of external agencies.
+            </p>
+            <p className="mt-5">
+              I also gained plenty of experience in all sorts of digital projects. From landing pages to complex systems
+              and platforms. Starting on those with a little budget which I coded some elements mainly by myself to
+              bigger ones in which I’ve been leading the project with help from a variety of external agencies.
+            </p>
+          </div>
+          <div className="border-2 border-green-400 p-5 sticky bottom-0 lg:top-0 lg:h-screen lg:w-1/2 flex justify-center items-center">
+            <motion.div style={{ x: y, rotateZ: roation }}>
+              <EmojiIconCircle size="400">{emoji}</EmojiIconCircle>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+      <section className="min-h-screen bg-violet"></section>
+      <ProjectsPanel />
+      <section className="min-h-screen bg-violet"></section>
       <footer className="">Wiwo</footer>
     </div>
   );
