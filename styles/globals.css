@@ -9,7 +9,7 @@ body {
   scroll-behavior: smooth;
   font-size: 12px;
 }
-
+/* 
 @media screen(xs) {
   html,
   body {
@@ -28,7 +28,7 @@ body {
   body {
     font-size: 20px;
   }
-}
+} */
 
 /* 
 html,

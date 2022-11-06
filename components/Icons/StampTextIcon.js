@@ -6,6 +6,7 @@ export default function StampTextIcon({
   angle = 14,
   rotationOffset = -140,
   iconSize = 100,
+  innerCircleMaring = 60,
   children,
   style,
 }) {
@@ -18,8 +19,13 @@ export default function StampTextIcon({
       <div
         className="absolute left-0 top-0 bottom-0 right-0 flex justify-center items-center border-[6px] border-black bg-white rounded-full"
         style={{ fontSize: "56px" }}>
-        <div style={{ width: `${iconSize}px`, height: `${iconSize}px` }}>{children}</div>
+        <div className="" style={{ width: `${iconSize}px`, height: `${iconSize}px` }}>
+          {children}
+        </div>
       </div>
+      <div
+        className="absolute left-0 top-0 bottom-0 right-0 flex justify-center items-center border-[2px] border-black rounded-full"
+        style={{ margin: `${innerCircleMaring}px` }}></div>
       {Array.from(text).map((el, ind) => (
         <span
           key={ind}
