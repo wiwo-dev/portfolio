@@ -7,6 +7,9 @@ module.exports = {
       serif: ["Merriweather", "serif"],
     },
     extend: {
+      screens: {
+        xs: "500px",
+      },
       colors: {
         dark: "#08081A",
         yellow: "#FCD13A",
