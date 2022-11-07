@@ -27,9 +27,7 @@ export default function Home() {
 
       <TechnologiesSection />
       <section className="min-h-[30vh] bg-violet"></section>
-      <div id="projects">
-        <ProjectsPanel />
-      </div>
+      <div id="projects">{/* <ProjectsPanel /> */}</div>
       <section className="min-h-[30vh] bg-violet"></section>
       <footer className="">Wiwo</footer>
       <section id="testsection" className="min-h-[50vh] bg-pink"></section>

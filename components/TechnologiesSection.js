@@ -10,7 +10,7 @@ export default function TechnologiesSection() {
         </div>
 
         <div className=" col-span-4 md:col-span-6 lg:col-span-7">
-          <p className="leading-relaxed text-lg">
+          <p className="leading-relaxed text-xl lg:text-2xl">
             My favourite UI library is React. For more complex projects I like to use NextJS. As for styling, I know
             CSS/SCSS and BEM naming convention, but generally prefer Tailwind CSS which makes writing reusable
             components easier and faster. I’m also familiar with Node.js and Express. When there is a need to work with
