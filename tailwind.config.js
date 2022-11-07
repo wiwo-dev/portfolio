@@ -6,6 +6,18 @@ module.exports = {
       sans: ["Lato", "sans-serif"],
       serif: ["Merriweather", "serif"],
     },
+    fontSize: {
+      xs: ["0.0.563rem", { lineHeight: "1.75" }],
+      sm: ["0.75rem", { lineHeight: "1.75" }],
+      base: ["1rem", { lineHeight: "1.75" }],
+      lg: ["1.333rem", { lineHeight: "1.3" }],
+      xl: ["1.777rem", { lineHeight: "1.3" }],
+      "2xl": ["2.369rem", { lineHeight: "1.3" }],
+      "3xl": ["3.157rem", { lineHeight: "1.3" }],
+      "4xl": ["4.209rem", { lineHeight: "1.3" }],
+      "5xl": ["5.61rem", { lineHeight: "1.3" }],
+      "6xl": ["7.478rem", { lineHeight: "1.3" }],
+    },
     extend: {
       screens: {
         xs: "500px",

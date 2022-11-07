@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import StampTextIcon from "../components/Icons/StampTextIcon";
 import useWindowWidth from "../utils/useWindowWidth";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -105,23 +105,49 @@ export default function AboutMeSection() {
   const ref = useRef(null);
   let { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["5% end", "end 50%"],
+    offset: ["10% end", "end 50%"],
   });
 
-  let x = useTransform(scrollYProgress, [0, 1], ["500px", `-${stampsHorizontalWidthScroll}px`]);
-  let rotateZ = useTransform(scrollYProgress, [0, 1], ["0deg", "-1080deg"]);
+  let x = useTransform(scrollYProgress, [0, 1], [200, -stampsHorizontalWidthScroll]);
   let rotate = useTransform(scrollYProgress, [0, 1], [0, -1080]);
+
+  const AboutMeParagraph = ({ children, onChange, ...rest }) => {
+    const ref = useRef();
+    let { scrollYProgress } = useScroll({
+      target: ref,
+      offset: ["10% end", "end 0%"],
+    });
+    let x = useTransform(scrollYProgress, [0, 1], [200, -200]);
+
+    useEffect(() => {
+      x.onChange((latest) => onChange(latest));
+    }, []);
+
+    return (
+      <div
+        ref={ref}
+        className="col-span-2 col-start-1 text-xl lg:text-2xl lg:min-h-[350px] flex items-center"
+        {...rest}>
+        {children}
+      </div>
+    );
+  };
+
+  const [stampsXArray, setStampsXArray] = useState(Array(aboutme.length));
+  useEffect(() => {
+    console.log(stampsXArray);
+  }, [stampsXArray]);
 
   return (
     <>
       <section className="min-h-screen bg-yellow py-[100px]">
         <div className="mx-auto max-w-screen-2xl px-[32px]">
-          <div className="md:flex gap-5">
+          <div className="lg:flex gap-5">
             <div className="md:w-[40%]">
               <Heading>About me</Heading>
             </div>
             <div className="md:w-[60%]">
-              <p className="text-3xl leading-relaxed">
+              <p className="text-xl lg:text-2xl leading-relaxed">
                 In my work, I strive to create thoughtful, user-centered experiences that adhere to web standards. I
                 build websites and web applications using JavaScript, React and NextJS. In order to “make it pop” I use
                 Framer Motion for animations.
@@ -131,9 +157,26 @@ export default function AboutMeSection() {
 
           <div ref={ref} className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20">
             {aboutme.map((el, ind) => (
-              <div key={ind} className="col-span-2 col-start-1 text-3xl lg:min-h-[350px] flex items-center">
+              //   <div key={ind} className="col-span-2 col-start-1 text-xl lg:text-2xl lg:min-h-[350px] flex items-center">
+              //     {el.body}
+              //   </div>
+              <AboutMeParagraph
+                key={ind}
+                onChange={(x) => {
+                  //console.log(x);
+                  let copy = [...stampsXArray];
+                  copy[ind] = x;
+                  setStampsXArray([...copy]);
+
+                  //   setStampsXArray((current) =>
+                  //     current.map((obj, cind) => {
+                  //       if (ind === cind) return x;
+                  //       return obj;
+                  //     })
+                  //   );
+                }}>
                 {el.body}
-              </div>
+              </AboutMeParagraph>
             ))}
             {windowWidth >= 1024 &&
               aboutme.map((el, ind) => (
@@ -152,11 +195,11 @@ export default function AboutMeSection() {
         </div>
         {windowWidth < 1024 && (
           <div
-            className=" bg-yellow p-5 sticky bottom-0 flex flex-nowrap items-center overflow-hidden mt-[100px]"
+            className=" bg-yellow p-5 sticky bottom-0 flex flex-nowrap items-center overflow-hidden mt-[0vh]"
             style={{ gap: `${settings.stampsGap}px` }}>
             {aboutme.map((el, ind) => (
-              <motion.div style={{ x, rotate }} key={ind}>
-                <div style={{ rotate: `z ${90 * ind}deg` }}>
+              <motion.div style={{ x: stampsXArray[ind] }} key={ind} className="h-[300px]">
+                <div style={{}} className="absolute top-0 bottom-0 left-0 right-0 h-[300px]">
                   <StampTextIcon
                     text={el.iconText}
                     {...el.stampSettings}
