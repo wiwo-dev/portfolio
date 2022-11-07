@@ -11,6 +11,7 @@ import AboutMeSection from "../components/AboutMeSection";
 import AboutMeSection2 from "../components/AboutMeSection2";
 import AboutMeSection3 from "../components/AboutMeSection3";
 import TechnologiesSection from "../components/TechnologiesSection";
+import WhatICanHelpYouWith from "../components/WhatICanHelpYouWith";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Navbar />
 
       <HeroHeader />
+      <WhatICanHelpYouWith />
       <AboutMeSection3 />
 
       <TechnologiesSection />

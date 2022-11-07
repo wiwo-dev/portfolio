@@ -4,12 +4,19 @@ import StampTextIcon from "../components/Icons/StampTextIcon";
 import useWindowWidth from "../utils/useWindowWidth";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Heading from "./ui/Heading";
+import UnderlineText from "./ui/UnderlineText";
 
 const aboutme = [
   {
     title: "Education",
     iconText: "TRUST ME, I'M AN ENGENEER",
-    body: "I am a Computer Science Engineer and have a Masters's degree in Management in Virtual Environments. My education gave me a deep understanding of digital projects' technical and business sides.",
+    body: () => (
+      <pp>
+        I am a <UnderlineText>Computer Science Engineer</UnderlineText> and have a Masters's degree in{" "}
+        <UnderlineText>Management in Virtual Environments</UnderlineText>. My education gave me a deep understanding of
+        digital projects' technical and business sides.
+      </pp>
+    ),
     icon: "computer.svg",
     stampSettings: {
       rotationOffset: -110,
@@ -23,7 +30,13 @@ const aboutme = [
   {
     title: "Technology & Business",
     iconText: "I UNDERSTAND BUSINESS & TECHNOLOGY",
-    body: "I am a good communicator with developed soft skills. I can talk with all project stakeholders in business and technical languages. I know the budgeting process, and I can set and track targets.",
+    body: () => (
+      <p>
+        I am a good communicator with developed soft skills. I can talk with all project stakeholders in{" "}
+        <UnderlineText>business and technical languages</UnderlineText>. I know the budgeting process, and I can set and
+        track targets.
+      </p>
+    ),
     icon: "target.svg",
     stampSettings: {
       rotationOffset: -100,
@@ -37,7 +50,15 @@ const aboutme = [
   {
     title: "Corporate experiance",
     iconText: "TEAM & PROJECT MANAGEMENT",
-    body: "Over the course of my career at Red Bull I have been managing a Team responsible for over 20 social media channels. I gained plenty of experience in all sorts of digital projects. My work has ranged from landing pages to complex systems and platforms. Starting with those with a modest budget where I coded some of the elements myself to the bigger ones in which I led the project with help from a variety of external agencies.",
+    body: () => (
+      <p>
+        Over the course of my career at Red Bull I have been managing a Team responsible for over 20 social media
+        channels. I gained plenty of <UnderlineText>experience in all sorts of digital projects</UnderlineText>. My work
+        has ranged from landing pages to complex systems and platforms. Starting with those with a modest budget where I
+        coded some of the elements myself to the bigger ones in which I led the project with help from a variety of
+        external agencies.
+      </p>
+    ),
     icon: "business.svg",
     stampSettings: {
       rotationOffset: -140,
@@ -51,7 +72,13 @@ const aboutme = [
   {
     title: "Aestetic design",
     iconText: "AESTETIC DESIGN AND GRAPHICS",
-    body: "My work has thought me the importance of high-quality branding. In my youth I also worked as a photographer, I learned Photoshop, Lightroom, and Illustrator which recently helped me quickly learn Figma which I use to design user interfaces.",
+    body: () => (
+      <p>
+        My work has thought me the importance of <UnderlineText>high-quality design</UnderlineText>. In my youth I also
+        worked as a photographer, I learned Photoshop, Lightroom, and Illustrator which recently helped me quickly learn
+        Figma which I use to design user interfaces.
+      </p>
+    ),
     icon: "design.svg",
     stampSettings: {
       rotationOffset: -140,
@@ -65,7 +92,14 @@ const aboutme = [
   {
     title: "Knowladge sharing & presenting",
     iconText: "I KNOW HOW TO SHARE KNOWLADGE",
-    body: "I’m also a certified kitesurfing, windsurfing, and skiing instructor. I’ve been teaching in many places around the globe. This experience influenced my ability to prepare presentations and present in front of people. Sharing knowledge in an understandable and easy-to-absorb manner is one of my skills. My spare time is filled with all kinds of sports. I’m currently working on improving my surfing and learning how to surf big waves.",
+    body: () => (
+      <p>
+        I’m also a certified kitesurfing, windsurfing, and skiing instructor. I’ve been teaching in many places around
+        the globe. This experience influenced my ability to <UnderlineText>prepare presentations</UnderlineText> and{" "}
+        <UnderlineText>present in front of people</UnderlineText>. <UnderlineText>Sharing knowledge</UnderlineText> in
+        an understandable and easy-to-absorb manner is one of my skills.
+      </p>
+    ),
     icon: "teacher.svg",
     stampSettings: {
       rotationOffset: -150,
@@ -79,7 +113,12 @@ const aboutme = [
   {
     title: "In my free time",
     iconText: "STAY ACTIVE",
-    body: "My spare time is filled with all kinds of sports. I’m currently working on improving my surfing and learning how to surf big waves.",
+    body: () => (
+      <p>
+        My spare time is filled with all kinds of sports. I’m currently working on improving my surfing and learning how
+        to surf big waves.
+      </p>
+    ),
     icon: "surf.svg",
     stampSettings: {
       rotationOffset: -70,
@@ -127,15 +166,15 @@ export default function AboutMeSection() {
     const ref = useRef();
     let { scrollYProgress } = useScroll({
       target: ref,
-      offset: ["10% end", "end 10%"],
+      offset: ["20% end", "end 10%"],
     });
     let x2 = useTransform(scrollYProgress, [0, 1], [windowWidth / 1.2, -windowWidth / 0.7]);
     let x = useTransform(
       scrollYProgress,
-      [0, 0.25, 0.75, 1],
+      [0, 0.35, 0.9, 1],
       [windowWidth, windowWidth * 0.1, -windowWidth * 0.9, -windowWidth]
     );
-    let rotateZ = useTransform(scrollYProgress, [0, 1], [0, -1080]);
+    let rotateZ = useTransform(scrollYProgress, [0, 1], [0, -720]);
     return (
       <>
         <div
@@ -145,7 +184,7 @@ export default function AboutMeSection() {
           {children}
         </div>
         <Portal targetRef={stampsRef}>
-          <motion.div style={{ x, rotateZ, position: "absolute" }} transition={{ type: "tween", ease: "circInOut" }}>
+          <motion.div style={{ x, rotateZ, position: "absolute" }} transition={{}}>
             {stampBody}
           </motion.div>
         </Portal>
@@ -191,7 +230,7 @@ export default function AboutMeSection() {
                 }
                 key={ind}
                 onChange={(x) => {}}>
-                {el.body}
+                <el.body />
               </AboutMeParagraph>
             ))}
             {windowWidth >= 1024 &&
