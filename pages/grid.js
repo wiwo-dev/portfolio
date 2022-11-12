@@ -6,14 +6,14 @@ export default function grid() {
   return (
     <>
       <main className="bg-violet min-h-[20vh]">
-        <div className="max-w-screen-2xl bg-yellow mx-auto px-[32px] grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-[20px]">
+        <div className="max-w-screen-2xl bg-yellow-base mx-auto px-[32px] grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-[20px]">
           {cols.map((el, ind) => (
             <div key={ind} className="bg-slate-400">
               {ind + 1}
             </div>
           ))}
         </div>
-        <div className="max-w-screen-2xl bg-yellow mx-auto px-[32px] grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-[20px]">
+        <div className="max-w-screen-2xl bg-yellow-base mx-auto px-[32px] grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-[20px]">
           <div className="bg-green-500 col-span-4 md:col-span-4 lg:col-span-4">Hello</div>
 
           <div className="bg-green-500 col-span-4 md:col-span-4 row-span-2">???</div>

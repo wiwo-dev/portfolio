@@ -2,7 +2,7 @@ import Heading from "./ui/Heading";
 
 export default function AboutMeSection2() {
   return (
-    <section className="min-h-screen bg-yellow py-[100px]">
+    <section className="min-h-screen bg-yellow-base py-[100px]">
       <section className="mx-auto max-w-screen-2xl px-[32px]">
         <div className="md:flex gap-5">
           <div className="md:w-[40%]">

@@ -13,7 +13,7 @@ export default function Navbar() {
   let lastPixelsScrolled = useRef();
   let lastScrollDirection = useRef();
   let pixelsScrolled = useMotionValue(0);
-  let backgroundOpacity = useTransform(pixelsScrolled, scrollThreshold, [0.4, 0.1]);
+  let backgroundOpacity = useTransform(pixelsScrolled, scrollThreshold, [0.3, 0]);
   let backgroundColorTemplate = useMotionTemplate`rgba(250 250 250 / ${backgroundOpacity})`;
   let moveY = useTransform(pixelsScrolled, scrollThreshold, ["0%", "-100%"]);
 
@@ -56,7 +56,7 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        className="fixed top-0 left-0 w-full backdrop-blur z-10"
+        className="fixed top-0 left-0 w-full z-10"
         style={{ backgroundColor: backgroundColorTemplate, y: moveY }}>
         <div className="max-w-screen-2xl px-[32px] mx-auto flex justify-between py-4">
           <Link href="/" className="font-extrabold">
@@ -71,7 +71,7 @@ export default function Navbar() {
                 <Link scroll={false} href="#projects">
                   Projects
                 </Link>
-                <Link href="#cv">CV</Link>
+                <Link href="/cv">CV</Link>
               </>
             ) : (
               <>

@@ -89,10 +89,10 @@ export default function WhatICanHelpYouWith() {
   }
 
   return (
-    <section className="bg-yellow pt-[64px]">
+    <section className="bg-yellow-base pt-[64px]">
       <div className="max-w-screen-2xl mx-auto px-[32px]">
         <Heading>What I can help you with</Heading>
-        <p className="text-xl lg:text-2xl mt-8">
+        <p className="text-lg lg:text-xl mt-8">
           I’m here to help you with any kind of web development. From landing pages or business sites to complex
           applications. Digital projects usually consist of three parts:{" "}
           <UnderlineText color="salmon">definition</UnderlineText>, <UnderlineText>development</UnderlineText> and{" "}
@@ -108,7 +108,7 @@ export default function WhatICanHelpYouWith() {
               pagination={{
                 clickable: true,
               }}
-              spaceBetween={0}
+              spaceBetween={16}
               slidesPerView={1.2}
               centeredSlides={false}
               onSlideChange={(swiper) => {
@@ -121,8 +121,14 @@ export default function WhatICanHelpYouWith() {
               }}
               onSwiper={(swiper) => console.log(swiper)}>
               {phases.map((el, ind) => (
-                <SwiperSlide key={ind} style={{ height: "auto", paddingLeft: "32px", paddingRight: "32px" }}>
-                  <p className="border-2 rounded-md border-gray-900 p-5 text-xl pt-4 h-full">
+                <SwiperSlide
+                  key={ind}
+                  style={{
+                    height: "auto",
+                    paddingLeft: ind === 0 ? "32px" : "0px",
+                    paddingRight: ind === phases.length - 1 ? "32px" : "0px",
+                  }}>
+                  <p className="border-2 rounded-md border-gray-900 p-5 text-lg lg:text-xl pt-4 h-full">
                     <el.body />
                   </p>
                 </SwiperSlide>
@@ -132,7 +138,7 @@ export default function WhatICanHelpYouWith() {
             </Swiper>
           </div>
         ) : (
-          <div className="flex gap-3 px-[32px]">
+          <div className="flex gap-3 max-w-screen-2xl mx-auto px-[32px]">
             {phases.map((el, ind) => (
               <p
                 key={ind}

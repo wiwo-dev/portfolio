@@ -58,7 +58,7 @@ export default function AboutMeSection() {
   );
 
   return (
-    <section className="min-h-screen bg-yellow">
+    <section className="min-h-screen bg-yellow-base-base">
       <div id="about" className="flex justify-center p-5">
         <Heading className="">About me</Heading>
       </div>
@@ -70,7 +70,7 @@ export default function AboutMeSection() {
             </p>
           ))}
         </div>
-        <div className=" bg-yellow p-5 sticky bottom-0 lg:top-0 lg:h-screen lg:w-1/2 flex justify-center items-center">
+        <div className=" bg-yellow-base-base p-5 sticky bottom-0 lg:top-0 lg:h-screen lg:w-1/2 flex justify-center items-center">
           <motion.div style={{ x: y, rotateZ: roation }}>{stampIcon}</motion.div>
         </div>
       </div>

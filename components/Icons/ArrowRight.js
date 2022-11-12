@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ArrowRight({ size = 16 }) {
+export default function ArrowRight({ size = 16, color = "white" }) {
   return (
     <svg
       width={size}
@@ -11,7 +11,7 @@ export default function ArrowRight({ size = 16 }) {
       className="inline-block">
       <path
         d="M8.75 3.25L13.25 7.75L8.75 12.25M2.75 7.75H13.25"
-        stroke="white"
+        stroke={color}
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

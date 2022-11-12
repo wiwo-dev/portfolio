@@ -154,7 +154,7 @@ const data = {
 
 export default function cv() {
   return (
-    <main className="bg-yellow xs:p-3 md:p-7 min-h-screen">
+    <main className="bg-yellow-base xs:p-3 md:p-7 min-h-screen">
       <div className="border-2 border-black min-h-[50vh] bg-white  p-4 sm:p-6 lg:p-10 max-w-7xl mx-auto">
         <aside className="flex justify-end items-center gap-3 mb-6">
           <a
@@ -175,7 +175,7 @@ export default function cv() {
           <div className="flex gap-5 md:flex-col w-full md:w-1/3 ">
             <ul className="hidden md:block">
               <li className="">
-                <UnderlineText color="yellow">
+                <UnderlineText color="yellow-base">
                   <a className="cursor-pointer" href="mailto:wojtekwieclawski@gmail.com?subject=Hello!">
                     wojtekwieclawski@gmail.com
                   </a>
@@ -281,7 +281,7 @@ function CVHeadingUnderline({ children }) {
   return (
     <span>
       <h1 className="inline-block relative text-lg lg:text-xl font-bold ">
-        <UnderlineText color="yellow">{children}</UnderlineText>
+        <UnderlineText color="yellow-base">{children}</UnderlineText>
       </h1>
     </span>
   );

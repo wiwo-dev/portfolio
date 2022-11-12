@@ -20,11 +20,15 @@ module.exports = {
     },
     extend: {
       screens: {
-        xs: "500px",
+        xs: "480px",
       },
       colors: {
         dark: "#08081A",
-        yellow: "#FCD13A",
+        yellow: {
+          base: "#FCD13A",
+          dark: "#F6CC33",
+          darker: "#DFB932",
+        },
         salmon: "#F08B7A",
         violet: "#535BF5",
         "violet-light": "#9C9DE7",
