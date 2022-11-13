@@ -33,6 +33,10 @@ module.exports = {
         violet: "#535BF5",
         "violet-light": "#9C9DE7",
         pink: "#ED4B9E",
+        gray: "#3D404E",
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
     },
   },

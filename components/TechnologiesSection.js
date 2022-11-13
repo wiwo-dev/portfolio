@@ -3,14 +3,17 @@ import Heading from "./ui/Heading";
 
 export default function TechnologiesSection() {
   return (
-    <section className="min-h-screen bg-violet-light py-[64px]">
-      <div className="max-w-screen-2xl mx-auto px-[32px] grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-[20px]">
-        <div className=" col-span-4 md:col-span-8 lg:col-span-12">
-          <Heading>Technologies</Heading>
+    <section
+      className=" py-[64px]"
+      style={{ background: "radial-gradient(129.91% 265.52% at 45.04% 24.78%, #535BF5 24.31%, #FCD13A 100%)" }}>
+      <div className="max-w-screen-2xl mx-auto px-[32px]">
+        <div className="">
+          <Heading color="gray" className="text-white antialiased">
+            Technologies
+          </Heading>
         </div>
-
-        <div className=" col-span-4 md:col-span-6 lg:col-span-7">
-          <p className="leading-relaxed text-xl lg:text-2xl">
+        <div className="text-white antialiased pt-10">
+          <p className="text-lg lg:text-xl">
             My favourite UI library is React. For more complex projects I like to use NextJS. As for styling, I know
             CSS/SCSS and BEM naming convention, but generally prefer Tailwind CSS which makes writing reusable
             components easier and faster. I’m also familiar with Node.js and Express. When there is a need to work with
