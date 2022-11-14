@@ -1,8 +1,9 @@
 import Image from "next/image";
 import React, { useRef } from "react";
-import Button from "./ui/Button";
+import Button from "components/ui/Button";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import UnderlineText from "ui/UnderlineText";
+import UnderlineText from "components/ui/UnderlineText";
+import { ArrowRight } from "components/Icons";
 
 export default function HeroHeader() {
   const scrollRef = useRef();
@@ -33,8 +34,12 @@ export default function HeroHeader() {
           </p>
           <p className="mt-7 text-lg">I’m currently looking for new job opportunities as a Web Developer.</p>
           <div className="flex gap-5 py-7">
-            <Button>Contact me</Button>
-            <Button variant="light">Contact me</Button>
+            <Button href="/#contact">
+              <span className="flex items-center gap-2">
+                Contact me <ArrowRight color="black" />
+              </span>
+            </Button>
+            {/* <Button variant="light">Contact me</Button> */}
           </div>
         </motion.div>
         <div

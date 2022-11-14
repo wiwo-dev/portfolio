@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Heading from "./ui/Heading";
-import UnderlineText from "./ui/UnderlineText";
+import Heading from "components/ui/Heading";
+import UnderlineText from "components/ui/UnderlineText";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
@@ -12,7 +12,7 @@ import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import useWindowWidth from "../utils/useWindowWidth";
+import useWindowWidth from "utils/useWindowWidth";
 
 const phases = [
   {
@@ -20,7 +20,7 @@ const phases = [
       <>
         The <UnderlineText>definition</UnderlineText> phase is to understand the business problem. I know what questions
         to ask to go smoothly through the process. I will propose possible solutions and walk you through those, so we
-        can decide on the complexity and final scope.
+        can decide on the complexity and the final scope.
       </>
     ),
   },
@@ -36,14 +36,13 @@ const phases = [
     body: () => (
       <>
         The <UnderlineText>delivery</UnderlineText> phase is for the final round of amendments after which the project
-        goes live. The delivery phase is fo r the final round of amendments after which the project goes live. I can
-        help you buy a domain or connect the one you already have and set up analytic tools.
+        goes live. I can help you buy a domain or connect the one you already have and set up analytic tools.
       </>
     ),
   },
 ];
 
-export default function WhatICanHelpYouWith() {
+export default function TheProcessSection({ id }) {
   const { windowWidth, currentScreen } = useWindowWidth();
 
   const [showSwiperNavigation, setShowSwiperNavigation] = useState(false);
@@ -89,12 +88,12 @@ export default function WhatICanHelpYouWith() {
   }
 
   return (
-    <section className="bg-yellow-base pt-[64px]">
-      <div className="max-w-screen-2xl mx-auto px-[32px]">
-        <Heading>What I can help you with</Heading>
+    <section id={id} className="bg-yellow-base py-20 lg:py-28">
+      <div className="max-w-screen-xl mx-auto px-[32px]">
+        <Heading>The process</Heading>
         <p className="text-lg lg:text-xl mt-8">
-          I’m here to help you with any kind of web development. From landing pages or business sites to complex
-          applications. Digital projects usually consist of three parts:{" "}
+          You have a project in mind but you are not sure how to start working on it? I’m here to help, let’s connect.
+          Typical digital projects consist of three parts:
           <UnderlineText color="salmon">definition</UnderlineText>, <UnderlineText>development</UnderlineText> and{" "}
           <UnderlineText>delivery</UnderlineText>.
         </p>
@@ -138,7 +137,7 @@ export default function WhatICanHelpYouWith() {
             </Swiper>
           </div>
         ) : (
-          <div className="flex gap-3 max-w-screen-2xl mx-auto px-[32px]">
+          <div className="flex gap-3 max-w-screen-xl mx-auto px-[32px]">
             {phases.map((el, ind) => (
               <p
                 key={ind}
@@ -150,6 +149,13 @@ export default function WhatICanHelpYouWith() {
             ))}
           </div>
         )}
+      </div>
+      <div className="max-w-screen-xl mx-auto px-[32px]">
+        <p className="text-lg lg:text-xl mt-8">
+          I’m not a big digital agency so you can be sure, that you will have direct contact with me. I’m flexible. If
+          you feel like your project needs a different structure or maybe you would like to involve me on even earlier,
+          creative or strategy stages I’m open to that as well.
+        </p>
       </div>
     </section>
   );

@@ -2,15 +2,21 @@ import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import EmojiIconCircle from "../components/ui/EmojiIconCircle";
-import Heading from "../components/ui/Heading";
+
 import Navbar from "../components/Navbar/Navbar";
-import HeroHeader from "../components/HeroHeader";
-import AboutMeSection from "../components/AboutMeSection";
-import TechnologiesSection from "../components/TechnologiesSection";
-import WhatICanHelpYouWith from "../components/WhatICanHelpYouWith";
-import ProjectsSection from "../components/ProjectsSection";
-import ContactSection from "../components/ContactSection";
+
+import {
+  HeroHeader,
+  IntroSection,
+  AboutMeSection,
+  TechnologiesSection,
+  TheProcessSection,
+  ProjectsSection,
+  ContactSection,
+  FooterSection,
+  WhatICanHelpYouWithSection,
+} from "../components/sections";
+
 import UnderlineText from "../components/ui/UnderlineText";
 import Button from "../components/ui/Button";
 import ArrowRight from "../components/Icons/ArrowRight";
@@ -26,64 +32,12 @@ export default function Home() {
       <Navbar />
       <HeroHeader />
       <IntroSection />
-      <WhatICanHelpYouWith2 />
-      <AboutMeSection />
-      <TechnologiesSection />
-      <WhatICanHelpYouWith />
-      <ContactSection />
-      <ProjectsSection />
-      <section className="min-h-[30vh] bg-violet"></section>
-      <div id="projects">{/* <ProjectsPanel /> */}</div>
-      <section className="min-h-[30vh] bg-violet"></section>
-      <footer className="">Wiwo</footer>
-      <section id="testsection" className="min-h-[50vh] bg-pink"></section>
+      <WhatICanHelpYouWithSection />
+      <AboutMeSection id="aboutme" />
+      <ProjectsSection id="projects" />
+      <TheProcessSection id="process" />
+      <ContactSection id="contact" />
+      <FooterSection />
     </div>
-  );
-}
-
-function IntroSection() {
-  return (
-    <section className=" bg-yellow-base ">
-      <div className="mx-auto max-w-screen-xl px-[32px] py-24">
-        {/* <div className="h-[10px] w-[60%] bg-salmon"></div> */}
-        <p className="text-lg lg:text-xl lg:w-[60%]">
-          I build <UnderlineText>Websites</UnderlineText> and <UnderlineText>Web Applications</UnderlineText>. I focus
-          on thoughtful, user-centred experiences. My go to technologies are{" "}
-          <UnderlineText>JavaScript, React and NextJS</UnderlineText> but I’m always open to trying and learning new
-          things.
-        </p>
-      </div>
-    </section>
-  );
-}
-
-function WhatICanHelpYouWith2() {
-  return (
-    <section className=" bg-gray antialiased">
-      <div className="mx-auto max-w-screen-xl px-[32px] py-20">
-        <h1 className="text-2xl lg:text-3xl font-black tracking-tight text-white">
-          <UnderlineText color="pink">What I can help you with?</UnderlineText>
-        </h1>
-        <div className="flex flex-col md:flex-row">
-          <div className="text-white md:w-[60%] antialiased">
-            <p className="text-lg lg:text-xl max-lg:pt-10 lg:pt-3">
-              I’m here to help you with any kind of web development. From landing pages or business sites to complex
-              applications.
-            </p>
-            <p className="text-lg lg:text-xl max-lg:pt-10 lg:pt-3">
-              If you have a project in mind, please do not hesitate to contact me. Let's see what I can do for you.
-            </p>
-          </div>
-          <div className="md:w-[40%] flex justify-start md:justify-center items-end pt-10">
-            <Button>
-              Hire me
-              <span className="pl-2 flex justify-center items-center">
-                <ArrowRight color="black" />
-              </span>
-            </Button>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }

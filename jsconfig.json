@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "components"
-  },
-  "include": ["components"]
+    "baseUrl": "."
+  }
 }

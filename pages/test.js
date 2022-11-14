@@ -2,9 +2,8 @@ import React, { useRef } from "react";
 
 import useWindowWidth from "../utils/useWindowWidth";
 import { motion, useScroll, useTransform } from "framer-motion";
-import WhatICanHelpYouWith from "../components/WhatICanHelpYouWith";
-import ProjectsSection from "../components/ProjectsSection";
-import ContactSection from "../components/ContactSection";
+
+import { ContactSection, FooterSection } from "../components/sections";
 
 export default function Page() {
   const { windowWidth, currentScreen } = useWindowWidth();
@@ -13,7 +12,7 @@ export default function Page() {
     <>
       <section id="testsection" className="min-h-[80vh] bg-pink"></section>
       <ContactSection />
-      <section id="testsection" className="min-h-[50vh] bg-pink"></section>
+      <FooterSection />
     </>
   );
 }

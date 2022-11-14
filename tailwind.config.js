@@ -22,21 +22,22 @@ module.exports = {
       screens: {
         xs: "480px",
       },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
       colors: {
         dark: "#08081A",
-        yellow: {
-          base: "#FCD13A",
-          dark: "#F6CC33",
-          darker: "#DFB932",
-        },
+        "yellow-base": "#FCD13A",
+        "yellow-dark": "#F6CC33",
+        "yellow-darker": "#DFB932",
         salmon: "#F08B7A",
         violet: "#535BF5",
         "violet-light": "#9C9DE7",
         pink: "#ED4B9E",
         gray: "#3D404E",
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      dropShadow: {
+        bottom: "0px 0.3rem 0px rgba(0, 0, 0, 0.7)",
       },
     },
   },

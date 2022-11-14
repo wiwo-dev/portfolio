@@ -12,7 +12,7 @@ export default function Input({ label, type, name, onChange, placeholder, requir
         type={type}
         id={name}
         name={name}
-        className={`border-2 border-black text-lg font-extrabold rounded-lg focus:border-yellow focus-visible:outline-pink block w-full ${className}`}
+        className={`border-2 border-black text-base font-extrabold rounded-lg focus:border-yellow focus-visible:outline-yellow-base block w-full ${className}`}
         placeholder={placeholder}
         required={required}
         error={error}

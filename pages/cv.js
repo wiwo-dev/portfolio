@@ -2,6 +2,8 @@ import React from "react";
 
 import UnderlineText from "../components/ui/UnderlineText";
 
+import { MailIcon, DownloadIcon, LinkedInIcon } from "../components/Icons";
+
 const data = {
   coreTechnologies: [
     "JavaScript",
@@ -114,10 +116,10 @@ const data = {
           intro:
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta quasi accusantium voluptas saepe facere hic",
           bulletpoints: [
-            "Concept development and supervision of website creation for Red Bull projects.",
-            "Developing, creating and implementing a communication plan in owned and managed media channels.",
-            "Creating video content for social media and www. Depending on the project: cooperation with production teams or independent recording and editing.",
-            "Support and implementation of tools extending the capabilities of redbull.com",
+            "Preparation of content plans and ideas for activations for managed and owned channels.",
+            "Managing social media accounts. Ongoing community management, replying to messages and comments, creating reports and analysis.",
+            "Creating and supervising contests conducted on social media and on redbull.com.",
+            "Cooperation with other company departments, interactive agencies and external partners in digital activities related to the creation of event pages and other digital activations of Red Bull.",
           ],
         },
       },
@@ -130,10 +132,10 @@ const data = {
           intro:
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta quasi accusantium voluptas saepe facere hic",
           bulletpoints: [
-            "Brand ambasador working at Poznań University of Technology.",
+            "Brand ambassador working at Poznań University of Technology.",
             "Cooperation with student organizations in the city and supporting their initiatives.",
             "Organizing events for students.",
-            "Maintaining good relations with local medias (radio stations, tvs, newspapers).",
+            "Maintaining good relations with local media (radio stations, TVs, newspapers).",
           ],
         },
       },
@@ -304,36 +306,5 @@ function CVPosition({ headline, subheadline, time, variant = "one-line", locatio
       {location && <div className="text-base opacity-60">{location}</div>}
       <div className="pt-1 md:pr-16">{children}</div>
     </div>
-  );
-}
-
-function LinkedInIcon({ height = 16, width = 16, fill = "black" }) {
-  return (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width={width} height={height} fill={fill}>
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-    </svg>
-  );
-}
-
-function DownloadIcon({ height = 16, width = 16, fill = "black" }) {
-  return (
-    <svg height={height} fill={fill} viewBox="8 8.003 48 47.997" width={width} xmlns="http://www.w3.org/2000/svg">
-      <path d="M29.283 12.19a19.624 19.624 0 015.434 0 2 2 0 00.567-3.959 23.75 23.75 0 00-6.566 0 2 2 0 00.565 3.959z" />
-      <path d="M42.91 10.619a2 2 0 00-1.82 3.561C47.819 17.621 52 24.449 52 32c0 11.028-8.972 20-20 20s-20-8.972-20-20c0-7.551 4.181-14.379 10.911-17.819a2 2 0 00-1.821-3.561C13.016 14.747 8 22.939 8 32c0 13.233 10.766 24 24 24 13.233 0 24-10.767 24-24 0-9.061-5.016-17.253-13.09-21.381z" />
-      <path d="M22.586 36.586a2 2 0 000 2.828l8 8c.39.391.902.586 1.414.586s1.023-.195 1.414-.586l8-8a2 2 0 10-2.828-2.828L34 41.172V18a2 2 0 00-4 0v23.172l-4.586-4.586a2 2 0 00-2.828 0z" />
-    </svg>
-  );
-}
-
-function MailIcon({ height = 16, width = 16, fill = "black" }) {
-  return (
-    <svg
-      height={height}
-      viewBox="0 59.882 479.058 359.294"
-      width={width}
-      xmlns="http://www.w3.org/2000/svg"
-      fill={fill}>
-      <path d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 015.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z" />
-    </svg>
   );
 }

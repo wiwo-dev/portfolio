@@ -11,7 +11,7 @@ export default function Textarea({ label, name, value, onChange, placeholder, re
       <textarea
         id={name}
         name={name}
-        className={`border-2 border-black text-lg font-extrabold rounded-lg focus:border-yellow focus-visible:outline-pink block w-full p-2 ${className}`}
+        className={`border-2 border-black text-base font-extrabold focus:border-yellow focus-visible:outline-yellow-base block w-full ${className}`}
         placeholder={placeholder}
         required={required}
         error={error}

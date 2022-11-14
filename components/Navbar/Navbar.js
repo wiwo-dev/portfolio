@@ -7,31 +7,35 @@ import MobileMenu from "./MobileMenu";
 
 let scrollThreshold = [0, 50];
 
+const links = [
+  { label: "About me", href: "/#aboutme" },
+  { label: "My resume", href: "/cv" },
+  { label: "My Projects", href: "/#projects" },
+  { label: "The Process", href: "/#process" },
+  { label: "Contact me", href: "/#contact" },
+];
+
 export default function Navbar() {
   let { scrollY } = useScroll();
   let scrollYOnDirectionChange = useRef(scrollY.get());
   let lastPixelsScrolled = useRef();
   let lastScrollDirection = useRef();
   let pixelsScrolled = useMotionValue(0);
-  let backgroundOpacity = useTransform(pixelsScrolled, scrollThreshold, [0.3, 0]);
+  let backgroundOpacity = useTransform(pixelsScrolled, scrollThreshold, [0.9, 0]);
   let backgroundColorTemplate = useMotionTemplate`rgba(250 250 250 / ${backgroundOpacity})`;
   let moveY = useTransform(pixelsScrolled, scrollThreshold, ["0%", "-100%"]);
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
       if (latest < 0) return;
-
       let isScrollingDown = scrollY.getPrevious() - latest < 0;
       let scrollDirection = isScrollingDown ? "down" : "up";
-
       let currentPixelsScrolled = pixelsScrolled.get();
       let newPixelsScrolled;
-
       if (lastScrollDirection.current !== scrollDirection) {
         lastPixelsScrolled.current = currentPixelsScrolled;
         scrollYOnDirectionChange.current = latest;
       }
-
       if (isScrollingDown) {
         newPixelsScrolled = Math.min(
           lastPixelsScrolled.current + (latest - scrollYOnDirectionChange.current),
@@ -48,10 +52,17 @@ export default function Navbar() {
       lastScrollDirection.current = scrollDirection;
     });
   }, [pixelsScrolled, scrollY]);
-
   const { windowWidth } = useWindowWidth();
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  function MenuLink({ href, children }) {
+    const isAnchor = Array.from(href).filter((el) => el === "#").length > 0;
+    return (
+      <Link href={href} className="" scroll={!isAnchor}>
+        {children}
+      </Link>
+    );
+  }
 
   return (
     <>
@@ -65,13 +76,11 @@ export default function Navbar() {
           <div className="space-x-7">
             {windowWidth > 768 ? (
               <>
-                <Link scroll={false} href="#about">
-                  About me
-                </Link>
-                <Link scroll={false} href="#projects">
-                  Projects
-                </Link>
-                <Link href="/cv">CV</Link>
+                {links.map((link, ind) => (
+                  <MenuLink key={ind} href={link.href}>
+                    {link.label}
+                  </MenuLink>
+                ))}
               </>
             ) : (
               <>

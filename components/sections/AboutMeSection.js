@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
-import StampTextIcon from "./Icons/StampTextIcon";
-import useWindowWidth from "../utils/useWindowWidth";
+import StampTextIcon from "components/Icons/StampTextIcon";
+import useWindowWidth from "utils/useWindowWidth";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Heading from "./ui/Heading";
-import UnderlineText from "./ui/UnderlineText";
-import Button from "ui/Button";
-import ArrowRight from "Icons/ArrowRight";
+import Heading from "components/ui/Heading";
+import UnderlineText from "components/ui/UnderlineText";
+import Button from "components/ui/Button";
+import ArrowRight from "components/Icons/ArrowRight";
+import CVIcon from "components/Icons/CVIcon";
 
 const aboutme = [
   {
@@ -139,7 +140,7 @@ const settings = {
   stampsGap: 20,
 };
 
-export default function AboutMeSection() {
+export default function AboutMeSection({ id }) {
   const { windowWidth, currentScreen } = useWindowWidth();
 
   const stampsHorizontalWidthScroll = (aboutme.length + 0.2) * (settings.stampRadious + settings.stampsGap);
@@ -150,10 +151,15 @@ export default function AboutMeSection() {
     offset: ["10% end", "end 50%"],
   });
 
-  let x = useTransform(scrollYProgress, [0, 1], [200, -stampsHorizontalWidthScroll]);
-  let rotate = useTransform(scrollYProgress, [0, 1], [0, -1080]);
-  let opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   let stampsFieldBackground = useTransform(scrollYProgress, [0, 1], ["rgba(252,209,58,1)", "rgba(252,209,58,0)"]);
+  let stampsFieldBackgroundGradient = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [
+      "linear-gradient(0deg, rgba(252,209,58,1) 67%, rgba(0,0,0,0) 100%)",
+      "linear-gradient(0deg, rgba(252,209,58,0) 67%, rgba(0,0,0,0) 100%)",
+    ]
+  );
 
   const stampsRef = useRef();
 
@@ -197,7 +203,7 @@ export default function AboutMeSection() {
 
   return (
     <>
-      <section className=" bg-yellow-base ">
+      <section id={id} className=" bg-yellow-base">
         <div id="ABOUT ME INTRO" ref={introRef} className="lg:flex gap-5 mx-auto max-w-screen-xl px-[32px] pt-24">
           <div className="md:w-[40%] lg:-mb-10">
             <Heading>About me</Heading>
@@ -244,15 +250,18 @@ export default function AboutMeSection() {
               ))}
           </div>
 
-          <div className="max-lg:translate-y-[150px] max-lg:-mt-[100px] lg:mt-5 xl:w-[60%] bg-white border-4 border-black rounded-[20px] rounded-tl-[60px] rounded-br-[60px] min-h-[200px] min-w-[300px] flex flex-col md:flex-row items-center gap-5 p-[60px]">
-            <div>
-              <h1 className="text-lg lg:text-2xl font-bold">My resume</h1>
+          <div className="max-lg:translate-y-[150px] max-lg:-mt-[100px] lg:my-20 bg-white border-4 border-black rounded-[20px] rounded-tl-[60px] rounded-br-[60px] min-h-[200px] min-w-[300px] flex flex-col md:flex-row items-center gap-5 p-[60px]">
+            <div className="flex flex-col gap-5">
+              <div className="flex gap-3 items-start lg:items-center">
+                <CVIcon size={36} />
+                <h1 className="text-lg lg:text-2xl font-bold">My resume</h1>
+              </div>
               <p className="text-base lg:text-xl md:pr-[20%]">
                 You can find details about my education end work experiance in my resume. You can download it as a PDF
                 file.
               </p>
             </div>
-            <div className="px-10 w-[50%] flex justify-center">
+            <div className="md:px-10 w-full md:w-[50%] flex justify-start md:justify-center">
               <Button size="big" href="/cv">
                 My resume{" "}
                 <span className="pl-3 flex items-center">
@@ -265,9 +274,9 @@ export default function AboutMeSection() {
         {windowWidth < 1024 && (
           <motion.div
             ref={stampsRef}
-            style={{ backgroundColor: stampsFieldBackground }}
+            style={{ background: stampsFieldBackgroundGradient }}
             id="STAMPS REF"
-            className="pointer-events-none bg-yellow-base p-5 sticky bottom-0 left-0 rigth-0 w-full flex flex-nowrap justify-center items-center overflow-x-hidden mt-[0vh] h-[200px]"></motion.div>
+            className="pointer-events-none p-5 sticky bottom-0 left-0 rigth-0 w-full flex flex-nowrap justify-center items-center overflow-x-hidden mt-[0vh] h-[200px]"></motion.div>
         )}
       </section>
     </>
