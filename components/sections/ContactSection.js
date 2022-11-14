@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Button from "ui/Button";
-import { Input, Textarea } from "ui/form";
-import Heading from "ui/Heading";
+import Button from "components/ui/Button";
+import { Input, Textarea } from "components/ui/form";
+import Heading from "components/ui/Heading";
 import { motion } from "framer-motion";
 
 // Example POST method implementation:

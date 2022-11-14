@@ -2,7 +2,7 @@ import { LinkedInIcon, MailIcon, InstagramIcon } from "components/Icons";
 
 import Link from "next/link";
 import React from "react";
-import UnderlineText from "ui/UnderlineText";
+import UnderlineText from "components/ui/UnderlineText";
 
 const links = [
   { label: "About me", href: "/#aboutme" },

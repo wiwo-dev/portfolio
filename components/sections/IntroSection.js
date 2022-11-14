@@ -1,4 +1,4 @@
-const { default: UnderlineText } = require("ui/UnderlineText");
+import UnderlineText from "components/ui/UnderlineText";
 
 export default function IntroSection() {
   return (

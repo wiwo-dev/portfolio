@@ -17,10 +17,6 @@ import {
   WhatICanHelpYouWithSection,
 } from "../components/sections";
 
-import UnderlineText from "../components/ui/UnderlineText";
-import Button from "../components/ui/Button";
-import ArrowRight from "../components/Icons/ArrowRight";
-
 export default function Home() {
   return (
     <div className="">
