@@ -34,7 +34,7 @@ export default function ContactSection({ id }) {
     var object = {};
     formData.forEach((value, key) => (object[key] = value));
     console.log(object);
-    const response = await postData("http://localhost:3000/api/sendgrid", object);
+    const response = await postData("api/sendgrid", object);
     if (response.status === "200") setEmailSend(true);
     console.log(response);
   };
