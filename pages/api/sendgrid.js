@@ -19,7 +19,7 @@ async function sendEmail(req, res) {
         email: `${req.body.email}`,
         name: `${req.body.name}`,
       },
-      html: `<div>Mail from: ${req.body.name} (${req.body.email})</div>
+      html: `<div>Mail from:: ${req.body.name} (${req.body.email})</div>
       <div style="white-space: pre-wrap;">${req.body.body}</div>
       `,
     });
