@@ -2,10 +2,6 @@
 module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    fontFamily: {
-      sans: ["Lato", "sans-serif"],
-      serif: ["Merriweather", "serif"],
-    },
     fontSize: {
       xs: ["0.0.563rem", { lineHeight: "1.75" }],
       sm: ["0.75rem", { lineHeight: "1.75" }],
@@ -19,6 +15,10 @@ module.exports = {
       "6xl": ["7.478rem", { lineHeight: "1.3" }],
     },
     extend: {
+      fontFamily: {
+        sans: ["Lato", "sans-serif"],
+        serif: ["Merriweather", "serif"],
+      },
       screens: {
         xs: "480px",
       },
