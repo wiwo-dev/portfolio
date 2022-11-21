@@ -1,9 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "components/Navbar/Navbar";
 
 import {
   HeroHeader,

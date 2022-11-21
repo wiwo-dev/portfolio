@@ -10,7 +10,7 @@ export default function ProjectsSection({ id }) {
   const { windowWidth } = useWindowWidth();
 
   return (
-    <section id={id} className="min-h-screen bg-gray ">
+    <section id={id} className="min-h-screen bg-gray -mt-[250px] pt-[240px] pb-20 lg:pb-28">
       <div className="max-w-7xl mx-auto p-2 lg:p-7">
         <div className="text-center m-7">
           <Heading className="text-white" color="violet">
