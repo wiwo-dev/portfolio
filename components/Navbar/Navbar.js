@@ -67,7 +67,7 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        className="fixed top-0 left-0 w-full z-10"
+        className="fixed top-0 left-0 w-full z-30"
         style={{ backgroundColor: backgroundColorTemplate, y: moveY }}>
         <div className="max-w-screen-2xl px-[32px] mx-auto flex justify-between py-4">
           <Link href="/" className="font-extrabold">
