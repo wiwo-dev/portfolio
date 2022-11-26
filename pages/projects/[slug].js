@@ -146,12 +146,12 @@ export default function Project({ project }) {
   const Buttons = () => {
     return (
       <div className="mx-auto max-w-screen-xl px-[32px] flex flex-wrap gap-5 py-8 justify-center md:justify-start">
-        <Button href={project.projectUrl}>
+        <Button href={project.projectUrl} target="_blank">
           <span className="flex items-center gap-2">
             OPEN THE PROJECT <ArrowRight color="black" />
           </span>
         </Button>
-        <Button variant="light" href={project.githubUrl}>
+        <Button variant="light" href={project.githubUrl} target="_blank">
           <span className="flex items-center gap-3">
             CHECK THE CODE
             <GithubIcon color="black" size={24} />

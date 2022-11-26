@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-export default function Button({ variant = "default", size = "base", children, href = "", ...rest }) {
+export default function Button({ variant = "default", size = "base", children, href = "", target = "", ...rest }) {
   const defaultClassName =
     "bg-yellow-base hover:bg-yellow-dark active:bg-yellow-darker  border-[6px] border-yellow-base hover:border-yellow-dark active:border-yellow-darker";
   const lightClassName =
@@ -24,7 +24,7 @@ export default function Button({ variant = "default", size = "base", children, h
   if (href) {
     const isAnchor = Array.from(href).filter((el) => el === "#").length > 0;
     return (
-      <Link href={href} scroll={!isAnchor}>
+      <Link href={href} scroll={!isAnchor} target={target}>
         <MyButton />
       </Link>
     );
