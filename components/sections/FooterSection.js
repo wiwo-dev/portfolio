@@ -3,6 +3,7 @@ import { LinkedInIcon, MailIcon, InstagramIcon } from "components/Icons";
 import Link from "next/link";
 import React from "react";
 import UnderlineText from "components/ui/UnderlineText";
+import { MyLink } from "components/ui";
 
 const links = [
   { label: "About me", href: "/#aboutme" },
@@ -19,17 +20,23 @@ export default function FooterSection() {
         <p className="text-white">
           <UnderlineText color="violet">Say hello</UnderlineText>
         </p>
-
-        <span className="flex gap-3 items-center text-white">
-          <MailIcon fill="white" size={16} /> wojtekwieclawski@gmail.com
-        </span>
-        <span className="flex gap-3 items-center text-white">
-          <LinkedInIcon fill="white" size={16} /> Wojciech Więcławski
-        </span>
-        <span className="flex gap-3 items-center text-white">
-          <InstagramIcon color="white" size={16} /> @wiwowiwo
-        </span>
-        <ul className="flex flex-col gap-3 md:flex-row max-w-screen-lg mx-auto justify-around">
+        <MyLink href="mailto:wojtekwieclawski@gmail.com?subject=Hello!" className="text-white">
+          <span className="flex gap-3 items-center ">
+            <MailIcon fill="white" size={16} /> wojtekwieclawski@gmail.com
+          </span>
+        </MyLink>
+        <MyLink href="https://www.linkedin.com/in/wojciech-wieclawski/" className="text-white">
+          <span className="flex gap-3 items-center ">
+            <LinkedInIcon fill="white" size={16} /> Wojciech Więcławski
+          </span>
+        </MyLink>
+        <MyLink href="https://www.instagram.com/wiwowiwo/" className="text-white">
+          <span className="flex gap-3 items-center">
+            <InstagramIcon color="white" size={16} /> @wiwowiwo
+          </span>
+        </MyLink>
+        <hr className="text-white opacity-70 mt-8"></hr>
+        <ul className="flex flex-col gap-3 md:gap-12 md:flex-row max-w-screen-lg md:mx-auto justify-around">
           {links.map((link, ind) => (
             <li key={ind}>
               <FooterLink href={link.href}>{link.label}</FooterLink>
@@ -45,8 +52,8 @@ function FooterLink({ href = "", children }) {
   const isAnchor = Array.from(href).filter((el) => el === "#").length > 0;
 
   return (
-    <Link href={href} className="underline text-white uppercase" scroll={!isAnchor}>
+    <MyLink href={href} className="text-white" scroll={!isAnchor}>
       {children}
-    </Link>
+    </MyLink>
   );
 }

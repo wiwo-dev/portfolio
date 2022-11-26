@@ -20,8 +20,8 @@ export default function WhatICanHelpYouWith2() {
             </p>
           </div>
           <div className="md:w-[40%] flex justify-start md:justify-center items-end pt-10">
-            <Button>
-              Hire me
+            <Button href="/#contact">
+              Contact me
               <span className="pl-2 flex justify-center items-center">
                 <ArrowRight color="black" />
               </span>

@@ -4,13 +4,15 @@ import Heading from "components/ui/Heading";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import ArrowRight from "components/Icons/ArrowRight";
 import useWindowWidth from "utils/useWindowWidth";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function ProjectsSection({ id }) {
   const ref = useRef(null);
   const { windowWidth } = useWindowWidth();
 
   return (
-    <section id={id} className="min-h-screen bg-gray -mt-[250px] pt-[240px] pb-20 lg:pb-28">
+    <section id={id} className="min-h-screen bg-gray pb-20 lg:pb-28">
       <div className="max-w-7xl mx-auto p-2 lg:p-7">
         <div className="text-center m-7">
           <Heading className="text-white" color="violet">
@@ -20,22 +22,25 @@ export default function ProjectsSection({ id }) {
         <div className="flex flex-col gap-5">
           <Project
             title="Game in react"
-            picture="projects/snake-game.png"
+            picture="/projects-logos/snake-game.png"
             description="Do you remember playing Snake Game on Nokia 3210? I do! And that’s why decided to recreate the game as one of my
           portfolio projects."
             technologies={["React", "Tailwind CSS", "Firestore"]}
+            href="/projects/snake-game"
           />
           <Project
             title="Sorting Visualizer"
-            picture="projects/sorting.png"
+            picture="/projects-logos/sorting.png"
             description="This project is visualizing how sorting algorithms works. It helps to understand each step..."
             technologies={["React", "Chakra UI"]}
+            href="/projects/sorting-visualizer"
           />
           <Project
             title="Ecommerce platform"
-            picture="projects/veggies.png"
+            picture="/projects-logos/veggies.png"
             description="It’s an online shop which can be used for businesses that sell multiple products that are usually bought in more than one quantity."
             technologies={["NextJS", "React", "Prisma", "Tailwind CSS", "Stripe"]}
+            href="/projects/veggies-and-fruits"
           />
         </div>
       </div>
@@ -43,7 +48,7 @@ export default function ProjectsSection({ id }) {
   );
 }
 
-function ProjectCard({ title, description, technologies = [], href }) {
+function ProjectCard({ title, description, technologies = [], href = "#" }) {
   return (
     <div className="min-h-[200px] h-full max-lg:pt-16 border-[8px] rounded-[20px] rounded-tr-[60px] rounded-bl-[60px]  border-black bg-violet flex flex-col justify-between text-left gap-5 text-white p-10">
       <div className="flex flex-col gap-5">
@@ -56,11 +61,11 @@ function ProjectCard({ title, description, technologies = [], href }) {
           ))}
         </div>
       </div>
-      <a href="#" className="text-right">
+      <Link href={href} className="text-right">
         <span>
           READ MORE <ArrowRight size={20} />
         </span>
-      </a>
+      </Link>
     </div>
   );
 }
@@ -83,12 +88,12 @@ function Project({ title, description, picture, technologies = [], href }) {
   return (
     <div ref={ref} className="flex flex-col-reverse max-w-screen-sm mx-auto lg:max-w-full lg:flex-row-reverse lg:gap-5">
       <motion.div style={{ x: windowWidth >= 1024 ? x2 : 0, y: windowWidth < 1024 ? y : 0 }} className="lg:w-1/2">
-        <ProjectCard title={title} description={description} technologies={technologies} />
+        <ProjectCard title={title} description={description} technologies={technologies} href={href} />
       </motion.div>
       <motion.div
         className="max-lg:z-20 max-lg:-mb-10 flex flex-col p-10 justify-center items-center border-[8px] rounded-tl-[80px] rounded-br-[80px] rounded-tr-[20px] rounded-bl-[20px] border-black bg-white  lg:w-1/2"
         style={{ x: windowWidth >= 1024 ? x1 : 0, minHeight: windowWidth > 768 ? "100%" : "100px" }}>
-        <img src={`${picture}`} className="w-[250px]" />
+        <Image src={`${picture}`} width={250} height={166} className="w-[250px]" />
         <p className="font-extrabold text-lg xs:text-xl md:text-2xl ">{title}</p>
       </motion.div>
     </div>

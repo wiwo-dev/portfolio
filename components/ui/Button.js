@@ -21,12 +21,14 @@ export default function Button({ variant = "default", size = "base", children, h
     );
   };
 
-  if (href)
+  if (href) {
+    const isAnchor = Array.from(href).filter((el) => el === "#").length > 0;
     return (
-      <Link href={href}>
+      <Link href={href} scroll={!isAnchor}>
         <MyButton />
       </Link>
     );
+  }
 
   return <MyButton />;
 }

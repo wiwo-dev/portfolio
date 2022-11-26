@@ -26,6 +26,7 @@ export default function Home() {
       <IntroSection />
       <WhatICanHelpYouWithSection />
       <AboutMeSection id="aboutme" />
+      <section className="bg-gray -mt-[250px] pt-[240px]"></section>
       <ProjectsSection id="projects" />
       <TheProcessSection id="process" />
       <ContactSection id="contact" />

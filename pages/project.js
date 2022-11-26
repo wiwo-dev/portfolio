@@ -5,6 +5,7 @@ import { FooterSection, ProjectsSection } from "components/sections";
 import Heading from "components/ui/Heading";
 import Button from "components/ui/Button";
 import { ArrowRight, GithubIcon } from "components/Icons";
+import { ProjectHeader } from "components/project";
 
 const data = {
   technologies: ["React", "Tailwind CSS", "Firestore"],
@@ -19,7 +20,11 @@ export default function Project() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <ProjectHeader />
+      <ProjectHeader
+        title="Snake Game"
+        subline="Fully responsive game written in React."
+        image={<img src="projects/snake-game.png" className="w-[200px]" />}
+      />
       <div className="mx-auto max-w-screen-xl px-[32px] flex flex-wrap gap-5 py-8 justify-center md:justify-start">
         <Button href="/#contact">
           <span className="flex items-center gap-2">
@@ -59,20 +64,6 @@ export default function Project() {
       </div>
       <ProjectsSection />
       <FooterSection />
-    </div>
-  );
-}
-
-function ProjectHeader() {
-  return (
-    <div className="bg-yellow-base">
-      <div className="pt-24 pb-12 mx-auto max-w-screen-xl px-[32px] flex flex-col items-center md:items-start gap-5">
-        <div className="bg-white rounded-[30px] rounded-tl-[60px] rounded-br-[60px] p-[30px] w-fit">
-          <img src="projects/snake-game.png" className="w-[200px]" />
-        </div>
-        <Heading>Snake Game</Heading>
-        <p className="font-bold">Fully responsive game written in React.</p>
-      </div>
     </div>
   );
 }

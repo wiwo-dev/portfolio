@@ -222,9 +222,6 @@ export async function getStaticProps(context) {
   
   `;
 
-  let assetsIds = [];
-  const assetsArray = [];
-
   try {
     const response = await fetch(
       "https://graphql.contentful.com/content/v1/spaces/9lwq5y1zam6x?access_token=j65pOJCqWBWD6f-7L3VLuWOMA_eRuX-43-PaK3hYnr0",

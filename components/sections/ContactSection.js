@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Button from "components/ui/Button";
+import { Button, Heading, MyLink } from "components/ui";
 import { Input, Textarea } from "components/ui/form";
-import Heading from "components/ui/Heading";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 // Example POST method implementation:
 async function postData(url = "", data = {}) {
@@ -49,7 +49,9 @@ export default function ContactSection({ id }) {
         </div>
         <p className="text-lg lg:text-xl text-white">
           Got a question or proposal, or just want to say hello? Go ahead. Use the form below or send me an email to{" "}
-          <a href="mailto:wojtekwieclawski@gmail.com?subject=Hello">wojtekwieclawski@gmail.com</a>
+          <MyLink className="" href="mailto:wojtekwieclawski@gmail.com?subject=Hello">
+            wojtekwieclawski@gmail.com
+          </MyLink>
         </p>
         <div className="relative overflow-hidden">
           <motion.form animate={{ x: emailSend ? "100vw" : 0 }} className="flex flex-col gap-2" onSubmit={handleSubmit}>
