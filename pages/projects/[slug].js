@@ -62,6 +62,7 @@ export async function getStaticProps(context) {
           id
         }
         title
+        headline
         slug
         githubUrl
         projectUrl
@@ -130,6 +131,7 @@ export async function getStaticProps(context) {
   return {
     // Passed to the page component as props
     props: { project },
+    revalidate: 60,
   };
 }
 
@@ -171,7 +173,7 @@ export default function Project({ project }) {
       <Navbar />
       <ProjectHeader
         title={project.title}
-        subline="Fully responsive game written in React."
+        subline={project.headline}
         image={
           <Image src={project.logo.url} width={project.logo.width} height={project.logo.height} className="w-[200px]" />
         }

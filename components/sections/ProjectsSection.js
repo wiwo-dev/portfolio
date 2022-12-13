@@ -19,6 +19,9 @@ export default function ProjectsSection({ id }) {
             My projects
           </Heading>
         </div>
+        <p className="text-lg lg:text-xl lg:w-[80%] mx-auto text-center text-white mb-5 max-w-[65ch]">
+          Take a look at my portfolio projects.
+        </p>
         <div className="flex flex-col gap-5">
           <Project
             title="Game in react"
@@ -40,7 +43,7 @@ export default function ProjectsSection({ id }) {
             picture="/projects-logos/veggies.png"
             description="It’s an online shop which can be used for businesses that sell multiple products that are usually bought in more than one quantity."
             technologies={["NextJS", "React", "Prisma", "Tailwind CSS", "Stripe"]}
-            href="/projects/veggies-and-fruits"
+            href="/projects/ecommerce"
           />
         </div>
       </div>
@@ -93,8 +96,10 @@ function Project({ title, description, picture, technologies = [], href }) {
       <motion.div
         className="max-lg:z-20 max-lg:-mb-10 flex flex-col p-10 justify-center items-center border-[8px] rounded-tl-[80px] rounded-br-[80px] rounded-tr-[20px] rounded-bl-[20px] border-black bg-white  lg:w-1/2"
         style={{ x: windowWidth >= 1024 ? x1 : 0, minHeight: windowWidth > 768 ? "100%" : "100px" }}>
-        <Image src={`${picture}`} width={250} height={166} className="w-[250px]" />
-        <p className="font-extrabold text-lg xs:text-xl md:text-2xl ">{title}</p>
+        <Link href={href} className="flex flex-col justify-center items-center">
+          <Image src={`${picture}`} width={250} height={166} className="w-[250px]" />
+          <p className="font-extrabold text-lg xs:text-xl md:text-2xl ">{title}</p>
+        </Link>
       </motion.div>
     </div>
   );

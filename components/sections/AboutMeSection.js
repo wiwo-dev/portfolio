@@ -8,6 +8,7 @@ import UnderlineText from "components/ui/UnderlineText";
 import Button from "components/ui/Button";
 import ArrowRight from "components/Icons/ArrowRight";
 import CVIcon from "components/Icons/CVIcon";
+import RotateOnScroll from "components/scroll/RotateOnScroll";
 
 const aboutme = [
   {
@@ -77,7 +78,7 @@ const aboutme = [
     iconText: "AESTETIC DESIGN AND GRAPHICS",
     body: () => (
       <>
-        My work has thought me the importance of <UnderlineText>high-quality design</UnderlineText>. In my youth I also
+        My work has thought me the importance of <UnderlineText>high-quality design</UnderlineText>. In my youth I
         worked as a photographer, I learned Photoshop, Lightroom, and Illustrator which recently helped me quickly learn
         Figma which I use to design user interfaces.
       </>
@@ -113,25 +114,25 @@ const aboutme = [
       paddingTop: 20,
     },
   },
-  {
-    title: "In my free time",
-    iconText: "STAY ACTIVE",
-    body: () => (
-      <>
-        My spare time is filled with all kinds of sports. I’m currently working on improving my surfing and learning how
-        to surf big waves.
-      </>
-    ),
-    icon: "surf.svg",
-    stampSettings: {
-      rotationOffset: -70,
-      angle: 14,
-      radious: 300,
-      fontSize: 36,
-      iconSize: 120,
-      paddingTop: 20,
-    },
-  },
+  // {
+  //   title: "In my free time",
+  //   iconText: "STAY ACTIVE",
+  //   body: () => (
+  //     <>
+  //       My spare time is filled with all kinds of sports. I’m currently working on improving my surfing and learning how
+  //       to surf big waves.
+  //     </>
+  //   ),
+  //   icon: "surf.svg",
+  //   stampSettings: {
+  //     rotationOffset: -70,
+  //     angle: 14,
+  //     radious: 300,
+  //     fontSize: 36,
+  //     iconSize: 120,
+  //     paddingTop: 20,
+  //   },
+  // },
 ];
 
 const settings = {
@@ -241,10 +242,12 @@ export default function AboutMeSection({ id }) {
                   key={ind}
                   className="col-span-1 col-start-3 row-start-1 row-span-6 bg-blue "
                   style={{ gridRowStart: ind + 1, gridRowEnd: aboutme.length + 1 }}>
-                  <div key={ind} className="sticky top-0 flex justify-center pt-10">
-                    <StampTextIcon text={el.iconText} {...el.stampSettings} radious={settings.stampRadious}>
-                      <img src={`/emojis/${el.icon}`} />
-                    </StampTextIcon>
+                  <div key={ind} className="sticky top-0 flex justify-center pt-20">
+                    <RotateOnScroll>
+                      <StampTextIcon text={el.iconText} {...el.stampSettings} radious={settings.stampRadious}>
+                        <img src={`/emojis/${el.icon}`} />
+                      </StampTextIcon>
+                    </RotateOnScroll>
                   </div>
                 </div>
               ))}

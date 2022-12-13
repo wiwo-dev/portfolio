@@ -108,7 +108,7 @@ export function renderOptions(links) {
       },
       [INLINES.HYPERLINK]: (node, children) => {
         return (
-          <a className="underline font-bold" href={node.data.uri}>
+          <a className="underline font-bold" href={node.data.uri} target="_blank" rel="noreferrer">
             {children}
           </a>
         );
