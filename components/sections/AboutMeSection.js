@@ -269,9 +269,8 @@ export default function AboutMeSection({ id }) {
             </div>
             <div className="md:px-10 w-full md:w-[50%] flex justify-start md:justify-center">
               <Button size="big" href="/cv">
-                My resume{" "}
-                <span className="pl-3 flex items-center">
-                  <ArrowRight color="black" />
+                <span className="pl-3 flex items-center gap-2">
+                  My resume <ArrowRight color="black" />
                 </span>
               </Button>
             </div>

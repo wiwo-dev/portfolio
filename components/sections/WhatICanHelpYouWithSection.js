@@ -22,8 +22,8 @@ export default function WhatICanHelpYouWith2() {
           </div>
           <div className="md:w-[40%] flex justify-start md:justify-center items-end max-md:pt-10 md:items-center">
             <Button href="/#contact">
-              Contact me
-              <span className="pl-2 flex justify-center items-center">
+              <span className="pl-2 flex justify-center items-center gap-2">
+                Contact me
                 <ArrowRight color="black" />
               </span>
             </Button>
