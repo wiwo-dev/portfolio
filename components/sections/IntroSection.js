@@ -2,9 +2,9 @@ import UnderlineText from "components/ui/UnderlineText";
 
 export default function IntroSection() {
   return (
+    // <section className=" bg-yellow-base ">
     <section className=" bg-yellow-base ">
       <div className="mx-auto max-w-screen-xl px-[32px] py-24">
-        {/* <div className="h-[10px] w-[60%] bg-salmon"></div> */}
         <p className="text-lg lg:text-xl lg:w-[60%]">
           I build <UnderlineText color="white">Websites</UnderlineText> and{" "}
           <UnderlineText color="white">Web Applications</UnderlineText>. My go-to technologies are{" "}

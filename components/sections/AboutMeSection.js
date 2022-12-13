@@ -207,7 +207,7 @@ export default function AboutMeSection({ id }) {
       <section id={id} className=" bg-yellow-base">
         <div id="ABOUT ME INTRO" ref={introRef} className="lg:flex gap-5 mx-auto max-w-screen-xl px-[32px] pt-24">
           <div className="md:w-[40%] lg:-mb-10">
-            <Heading>About me</Heading>
+            <Heading>Who am I?</Heading>
           </div>
         </div>
       </section>

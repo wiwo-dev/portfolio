@@ -28,7 +28,7 @@ export default function Home() {
       <AboutMeSection id="aboutme" />
       <section className="bg-gray -mt-[250px] pt-[240px]"></section>
       <ProjectsSection id="projects" />
-      <TheProcessSection id="process" />
+      {/* <TheProcessSection id="process" /> */}
       <ContactSection id="contact" />
       <FooterSection />
     </div>

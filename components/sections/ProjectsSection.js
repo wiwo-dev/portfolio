@@ -13,7 +13,7 @@ export default function ProjectsSection({ id }) {
 
   return (
     <section id={id} className="min-h-screen bg-gray pb-20 lg:pb-28">
-      <div className="max-w-7xl mx-auto p-2 lg:p-7">
+      <div className="max-w-7xl mx-auto px-2 lg:px-7 py-20">
         <div className="text-center m-7">
           <Heading className="text-white" color="violet">
             My projects
@@ -23,6 +23,13 @@ export default function ProjectsSection({ id }) {
           Take a look at my portfolio projects.
         </p>
         <div className="flex flex-col gap-5">
+          <Project
+            title="Ecommerce platform"
+            picture="/projects-logos/veggies.png"
+            description="It’s an online shop which can be used for businesses that sell multiple products that are usually bought in more than one quantity."
+            technologies={["NextJS", "React", "Prisma", "Tailwind CSS", "Stripe"]}
+            href="/projects/ecommerce"
+          />
           <Project
             title="Game in react"
             picture="/projects-logos/snake-game.png"
@@ -34,16 +41,9 @@ export default function ProjectsSection({ id }) {
           <Project
             title="Sorting Visualizer"
             picture="/projects-logos/sorting.png"
-            description="This project is visualizing how sorting algorithms works. It helps to understand each step..."
-            technologies={["React", "Chakra UI"]}
+            description="This project is visualizing how sorting algorithms work. It helps to understand each step. Users can pause the visualization and go forward or backward step by step."
+            technologies={["React", "Chakra UI", "Framer Motion"]}
             href="/projects/sorting-visualizer"
-          />
-          <Project
-            title="Ecommerce platform"
-            picture="/projects-logos/veggies.png"
-            description="It’s an online shop which can be used for businesses that sell multiple products that are usually bought in more than one quantity."
-            technologies={["NextJS", "React", "Prisma", "Tailwind CSS", "Stripe"]}
-            href="/projects/ecommerce"
           />
         </div>
       </div>

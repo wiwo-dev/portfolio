@@ -11,7 +11,7 @@ const links = [
   { label: "About me", href: "/#aboutme" },
   { label: "My resume", href: "/cv" },
   { label: "My Projects", href: "/#projects" },
-  { label: "The Process", href: "/#process" },
+  //{ label: "The Process", href: "/#process" },
   { label: "Contact me", href: "/#contact" },
 ];
 
@@ -21,7 +21,7 @@ export default function Navbar() {
   let lastPixelsScrolled = useRef();
   let lastScrollDirection = useRef();
   let pixelsScrolled = useMotionValue(0);
-  let backgroundOpacity = useTransform(pixelsScrolled, scrollThreshold, [0.9, 0]);
+  let backgroundOpacity = useTransform(pixelsScrolled, scrollThreshold, [1, 0]);
   let backgroundColorTemplate = useMotionTemplate`rgba(250 250 250 / ${backgroundOpacity})`;
   let moveY = useTransform(pixelsScrolled, scrollThreshold, ["0%", "-100%"]);
 

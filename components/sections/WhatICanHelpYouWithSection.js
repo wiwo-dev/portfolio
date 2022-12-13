@@ -7,19 +7,20 @@ export default function WhatICanHelpYouWith2() {
     <section className=" bg-gray antialiased">
       <div className="mx-auto max-w-screen-xl px-[32px] py-20">
         <h1 className="text-2xl lg:text-3xl font-black tracking-tight text-white">
-          <UnderlineText color="pink">What I can help you with?</UnderlineText>
+          <UnderlineText color="pink">What is this site?</UnderlineText>
         </h1>
         <div className="flex flex-col md:flex-row">
           <div className="text-white md:w-[60%] antialiased">
             <p className="text-lg lg:text-xl max-lg:pt-10 lg:pt-3">
-              I’m here to help you with any kind of web development. From landing pages or business sites to complex
-              applications.
+              This is my portfolio website where I present some of my skills and programming projects that I’ve been
+              working on recently. Contact me if you have a project that you need help with. Let’s see what I can do for
+              you.
             </p>
-            <p className="text-lg lg:text-xl max-lg:pt-10 lg:pt-3">
+            {/* <p className="text-lg lg:text-xl max-lg:pt-10 lg:pt-3">
               If you have a project in mind, please do not hesitate to contact me. Let's see what I can do for you.
-            </p>
+            </p> */}
           </div>
-          <div className="md:w-[40%] flex justify-start md:justify-center items-end pt-10">
+          <div className="md:w-[40%] flex justify-start md:justify-center items-end max-md:pt-10 md:items-center">
             <Button href="/#contact">
               Contact me
               <span className="pl-2 flex justify-center items-center">

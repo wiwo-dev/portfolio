@@ -83,7 +83,7 @@ const data = {
             "Digital projects management. Building and developing websites, platforms and digital experiences on redbull.com",
           ],
           projects: [
-            "Red Bull Enduro Liga - A platform that let us move Enduro-Motocross competitions to virtual world during the pandemic. Riders were uploading their video submitions throughtout 6 weeks period. Each entry was checked and judged by the admins. Platform was connected to Discord server.",
+            "Red Bull Enduro Liga - A platform that let us move Enduro-Motocross competitions to virtual world during the pandemic. Riders were uploading their video submitions throughtout 6 weeks period. Each entry was checked and assesed by the admins. Platform was connected to Discord server.",
           ],
         },
       },

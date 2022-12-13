@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import Button from "components/ui/Button";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, useAnimationControls } from "framer-motion";
 import UnderlineText from "components/ui/UnderlineText";
 import { ArrowRight } from "components/Icons";
 
@@ -15,6 +15,13 @@ export default function HeroHeader() {
   let yParalax1 = useTransform(scrollYProgress, [0, 1], [50, 200]);
   let yParalax2 = useTransform(scrollYProgress, [0, 1], [-20, 200]);
   let yParalaxLeft = useTransform(scrollYProgress, [0, 1], [-10, 100]);
+
+  const handControls = useAnimationControls();
+
+  const handClick = () => {
+    handControls.start({ rotateZ: 720 });
+    console.log("CLICK");
+  };
 
   return (
     <section className="relative">
@@ -71,9 +78,10 @@ export default function HeroHeader() {
               className="absolute bottom-0 right-[30px] lg:-right-[0px] xl:-right-[0px] w-[100px] md:w-[200px] lg:w-[250px]"
               alt="hand-hello-circle"
             /> */}
-
             <motion.img
               style={{ rotateZ: rotation }}
+              animate={handControls}
+              onClick={handClick}
               src="/HeroHeader/hand-hello-circle.svg"
               className="absolute bottom-[1%] right-[30px] lg:-right-[0px] xl:right-[30px] max-md:w-[25vw] lg:w-[250px]"
               alt="hand-hello-circle"
