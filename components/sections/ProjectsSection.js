@@ -27,7 +27,7 @@ export default function ProjectsSection({ id }) {
             title="Ecommerce platform"
             picture="/projects-logos/veggies.png"
             description="It’s an online shop which can be used for businesses that sell multiple products that are usually bought in more than one quantity."
-            technologies={["NextJS", "React", "Prisma", "Tailwind CSS", "Stripe"]}
+            technologies={["NextJS", "React", "Prisma", "Stripe", "Next Auth", "Imgix", "Tailwind CSS"]}
             href="/projects/ecommerce"
           />
           <Project
@@ -35,14 +35,14 @@ export default function ProjectsSection({ id }) {
             picture="/projects-logos/snake-game.png"
             description="Do you remember playing Snake Game on Nokia 3210? I do! And that’s why decided to recreate the game as one of my
           portfolio projects."
-            technologies={["React", "Tailwind CSS", "Firestore"]}
+            technologies={["React", "Tailwind CSS", "Firestore", "Firebase Hosting"]}
             href="/projects/snake-game"
           />
           <Project
             title="Sorting Visualizer"
             picture="/projects-logos/sorting.png"
             description="This project is visualizing how sorting algorithms work. It helps to understand each step. Users can pause the visualization and go forward or backward step by step."
-            technologies={["React", "Chakra UI", "Framer Motion"]}
+            technologies={["React", "Chakra UI", "Framer Motion", "GitHub Pages"]}
             href="/projects/sorting-visualizer"
           />
         </div>

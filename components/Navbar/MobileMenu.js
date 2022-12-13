@@ -8,7 +8,7 @@ const links = [
   { label: "About me", href: "/#aboutme" },
   { label: "My resume", href: "/cv" },
   { label: "My Projects", href: "/#projects" },
-  { label: "The Process", href: "/#process" },
+  //{ label: "The Process", href: "/#process" },
   { label: "Contact me", href: "/#contact" },
 ];
 
@@ -24,7 +24,7 @@ export default function MobileMenu({ onClose }) {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 h-screen w-screen z-10 bg-gray"
+      className="fixed top-0 left-0 h-screen w-screen z-50 bg-gray"
       initial={{ y: "-100%" }}
       animate={{ y: 0 }}
       exit={{ y: "-100%" }}

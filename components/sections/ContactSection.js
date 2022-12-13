@@ -25,8 +25,10 @@ async function postData(url = "", data = {}) {
 
 export default function ContactSection({ id }) {
   const [emailSend, setEmailSend] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const handleSubmit = async (e) => {
+    setIsSending(true);
     e.preventDefault();
     console.log("SEND");
     const formData = new FormData(e.target);
@@ -34,9 +36,15 @@ export default function ContactSection({ id }) {
     var object = {};
     formData.forEach((value, key) => (object[key] = value));
     console.log(object);
-    const response = await postData("api/sendgrid", object);
-    if (response.status === "200") setEmailSend(true);
-    console.log(response);
+    try {
+      const response = await postData("api/sendgrid", object);
+      if (response.status === "200") setEmailSend(true);
+      setIsSending(false);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+      setIsSending(false);
+    }
   };
 
   return (
@@ -59,6 +67,7 @@ export default function ContactSection({ id }) {
               name="name"
               type="text"
               label=""
+              required
               placeholder="YOUR NAME"
               className="p-10 rounded-[20px] rounded-tl-[60px] rounded-br-[60px] border-[6px]"></Input>
             <Input
@@ -66,15 +75,19 @@ export default function ContactSection({ id }) {
               name="email"
               type="email"
               placeholder="EMAIL"
+              required
               className="p-10 rounded-[20px] rounded-bl-[60px] rounded-tr-[60px] border-[6px]"></Input>
             <Textarea
               label=""
               name="body"
               type="text"
+              required
               placeholder="YOUR MESSAGE"
               className="p-10 rounded-[60px] p-10 border-[6px] min-h-[250px]"></Textarea>
             <div className="flex justify-center">
-              <Button type="submit">send</Button>
+              <Button type="submit" loading={isSending}>
+                send
+              </Button>
             </div>
           </motion.form>
           {emailSend && (
