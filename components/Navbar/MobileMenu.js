@@ -4,13 +4,7 @@ import Link from "next/link";
 import UnderlineText from "components/ui/UnderlineText";
 import { CloseIcon } from "components/Icons";
 
-const links = [
-  { label: "About me", href: "/#aboutme" },
-  { label: "My resume", href: "/cv" },
-  { label: "My Projects", href: "/#projects" },
-  //{ label: "The Process", href: "/#process" },
-  { label: "Contact me", href: "/#contact" },
-];
+import { links } from "data/menu";
 
 export default function MobileMenu({ onClose }) {
   function MenuLink({ href, children }) {

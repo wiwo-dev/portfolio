@@ -5,13 +5,7 @@ import React from "react";
 import UnderlineText from "components/ui/UnderlineText";
 import { MyLink } from "components/ui";
 
-const links = [
-  { label: "About me", href: "/#aboutme" },
-  { label: "My resume", href: "/cv" },
-  { label: "My Projects", href: "/#projects" },
-  { label: "The Process", href: "/#process" },
-  { label: "Contact me", href: "/#contact" },
-];
+import { links } from "data/menu";
 
 export default function FooterSection() {
   return (
