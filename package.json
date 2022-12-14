@@ -22,6 +22,7 @@
     "contentful": "^9.2.11",
     "framer-motion": "^7.6.1",
     "next": "13.0.0",
+    "next-seo": "^5.15.0",
     "puppeteer": "^19.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
