@@ -10,10 +10,10 @@ function MyApp({ Component, pageProps }) {
         openGraph={{
           url: "https://wiwoproduction.com",
           title: "Wojciech Wieclawski",
-          description: "Web Developer with corporate experiance",
+          description: "Web Developer with corporate experience",
           images: [
             {
-              url: "https://staging.wiwoproduction.com/seo/ogimage.jpg",
+              url: "https://wiwoproduction.com/seo/ogimage.jpg",
               width: 1200,
               height: 627,
               alt: "Wojciech Wieclawski | wiwoproduction.com",
