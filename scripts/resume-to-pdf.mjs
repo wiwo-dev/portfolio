@@ -25,7 +25,7 @@ async function main() {
       pageRanges: "1",
       width: "1230px",
       //height: Math.min(height, 4090),
-      height: height + 500,
+      height: height + 300,
       path: pdfFilePath,
       margin: { top: "85px", right: "85px", bottom: "85px", left: "85px" },
     });

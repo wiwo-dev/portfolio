@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <DefaultSeo
         title="Wojciech Wieclawski"
-        description="Web Developer with corporate experiance"
+        description="Web Developer with corporate experience"
         openGraph={{
           url: "https://wiwoproduction.com",
           title: "Wojciech Wieclawski",

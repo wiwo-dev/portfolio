@@ -212,7 +212,7 @@ export default function cv() {
           <div className="md:w-2/3 mt-8 md:mt-0">
             <div className="flex flex-col gap-5">
               <CVTitle>Wojciech Więcławski</CVTitle>
-              <p className="text-xl">Web Developer with corporate experiance</p>
+              <p className="text-xl">Web Developer with corporate experience</p>
               <p className="md:pr-[20%] pb-5">{data.heading.intro}</p>
             </div>
             <hr className="w-2/3"></hr>
