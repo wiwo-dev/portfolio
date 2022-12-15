@@ -30,7 +30,7 @@ const data = {
   ],
   heading: {
     intro:
-      "I’m a developer with 10 years of experience in the corporate world of Digital Marketing, Social Media, and Video Production. I am a Computer Science Engineer and have a Masters's degree in Management in Virtual Environments. My education and work experiance give me a deep understanding of the technical and business sides of digital projects. ",
+      "I’m a developer with 10 years of experience in the corporate world of Digital Marketing, Social Media, and Video Production. I am a Computer Science Engineer and have a Masters's degree in Management in Virtual Environments. My education and work experience give me a deep understanding of the technical and business sides of digital projects. ",
   },
   education: {
     intro: "",
