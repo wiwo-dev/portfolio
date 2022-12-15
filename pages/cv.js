@@ -3,6 +3,7 @@ import React from "react";
 import UnderlineText from "../components/ui/UnderlineText";
 
 import { MailIcon, DownloadIcon, LinkedInIcon } from "../components/Icons";
+import Link from "next/link";
 
 const data = {
   coreTechnologies: [
@@ -183,7 +184,9 @@ export default function cv() {
                   </a>
                 </UnderlineText>
               </li>
-              <li className="hover:cursor-pointer">wiwoproduction.com</li>
+              <li className="hover:cursor-pointer">
+                <Link href="https://wiwoproduction.com">wiwoproduction.com</Link>
+              </li>
             </ul>
 
             <div className="w-[35%] md:w-auto">
