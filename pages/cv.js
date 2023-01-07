@@ -185,7 +185,7 @@ export default function cv() {
                 </UnderlineText>
               </li>
               <li className="hover:cursor-pointer">
-                <Link href="https://wiwoproduction.com">wiwoproduction.com</Link>
+                <Link href="https://wiwo.dev">wiwo.dev</Link>
               </li>
             </ul>
 
