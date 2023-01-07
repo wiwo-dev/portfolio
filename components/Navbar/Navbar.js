@@ -65,7 +65,7 @@ export default function Navbar() {
         style={{ backgroundColor: backgroundColorTemplate, y: moveY }}>
         <div className="max-w-screen-2xl px-[32px] mx-auto flex justify-between py-4">
           <Link href="/" className="font-extrabold">
-            wiwoproduction.com
+            wiwo.dev
           </Link>
           <div className="space-x-7">
             {windowWidth > 768 ? (
