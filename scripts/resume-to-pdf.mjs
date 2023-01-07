@@ -24,10 +24,10 @@ async function main() {
       printBackground: true,
       pageRanges: "1",
       width: "1230px",
-      //height: Math.min(height, 4090),
-      height: height + 300,
+      height: height - 90,
       path: pdfFilePath,
-      margin: { top: "85px", right: "85px", bottom: "85px", left: "85px" },
+      //margin: { top: "85px", right: "85px", bottom: "85px", left: "85px" },
+      margin: { top: "0px", right: "0px", bottom: "0px", left: "0px" },
     });
 
     console.log("📄 Done generating the resume PDF.");
