@@ -1,10 +1,10 @@
-import { ProjectsSection2 } from "components/sections";
+import { ProjectsSection } from "components/sections";
 import React from "react";
 
 export default function Page({ projects }) {
   return (
     <>
-      <ProjectsSection2 projects={projects} />
+      <ProjectsSection projects={projects} />
     </>
   );
 }
