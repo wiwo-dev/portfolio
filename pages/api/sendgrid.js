@@ -6,14 +6,12 @@ async function sendEmail(req, res) {
   console.log(req.body);
   console.log("SENDING");
   try {
-    // console.log("REQ.BODY", req.body);
     await sendgrid.send({
-      to: "wojtekwieclawski@gmail.com", // Your email where you'll receive emails
+      to: "wojtekwieclawski@gmail.com",
       from: {
         email: "contactform@wiwoproduction.com",
         name: "Contact | wiwoproduction.com",
-      }, // your website email address here
-      //subject: `${req.body.subject}`,
+      },
       subject: `Email from wiwoproduction.com`,
       replyTo: {
         email: `${req.body.email}`,
@@ -24,7 +22,6 @@ async function sendEmail(req, res) {
       `,
     });
   } catch (error) {
-    // console.log(error);
     return res.status(error.statusCode || 500).json({ error: error.message });
   }
   console.log("EMAIL SEND");

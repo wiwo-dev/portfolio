@@ -25,6 +25,7 @@ async function postData(url = "", data = {}) {
 
 export default function ContactSection({ id }) {
   const [emailSend, setEmailSend] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [isSending, setIsSending] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -39,6 +40,7 @@ export default function ContactSection({ id }) {
     try {
       const response = await postData("api/sendgrid", object);
       if (response.status === "200") setEmailSend(true);
+      else setIsError(true);
       setIsSending(false);
       console.log(response);
     } catch (error) {
@@ -62,7 +64,10 @@ export default function ContactSection({ id }) {
           </MyLink>
         </p>
         <div className="relative overflow-hidden">
-          <motion.form animate={{ x: emailSend ? "100vw" : 0 }} className="flex flex-col gap-2" onSubmit={handleSubmit}>
+          <motion.form
+            animate={{ x: emailSend || isError ? "100vw" : 0 }}
+            className="flex flex-col gap-2"
+            onSubmit={handleSubmit}>
             <Input
               name="name"
               type="text"
@@ -100,6 +105,20 @@ export default function ContactSection({ id }) {
                 Thank you, your email was sent.
                 <br />
                 <br />I check my mailbox regularly so please expect my answer very soon.
+              </p>
+            </motion.div>
+          )}
+          {isError && (
+            <motion.div
+              initial={{ y: 200, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
+              <p className="text-white text-lg font-bold lg:w-[40%] text-center">
+                Sorry, something went wrong.
+                <br />
+                <br />
+                Send me an email to wojtekwieclawski@gmail.com
               </p>
             </motion.div>
           )}

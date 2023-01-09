@@ -1,35 +1,11 @@
-import Head from "next/head";
-import Navbar from "components/Navbar/Navbar";
+import { ProjectsSection2 } from "components/sections";
+import React from "react";
 
-import {
-  HeroHeader,
-  IntroSection,
-  AboutMeSection,
-  TechnologiesSection,
-  TheProcessSection,
-  ProjectsSection,
-  ContactSection,
-  FooterSection,
-  WhatICanHelpYouWithSection,
-} from "../components/sections";
-
-export default function Home({ projects }) {
+export default function Page({ projects }) {
   return (
-    <div className="">
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navbar />
-      <HeroHeader />
-      <IntroSection />
-      <WhatICanHelpYouWithSection />
-      <AboutMeSection id="aboutme" />
-      <section className="bg-gray -mt-[250px] pt-[240px]"></section>
-      <ProjectsSection id="projects" projects={projects} />
-      <section className="bg-gray pb-20 lg:pb-28"></section>
-      <ContactSection id="contact" />
-      <FooterSection />
-    </div>
+    <>
+      <ProjectsSection2 projects={projects} />
+    </>
   );
 }
 

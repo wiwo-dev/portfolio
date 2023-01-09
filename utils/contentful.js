@@ -89,7 +89,7 @@ export function renderOptions(links) {
         return <Image src={asset.url} alt={asset.title} width={asset.width} height={asset.height} />;
       },
       [BLOCKS.PARAGRAPH]: (node, children) => {
-        return <p className="">{children}</p>;
+        return <p className="max-w-[65ch]">{children}</p>;
       },
       [BLOCKS.HEADING_1]: (node, children) => {
         return <h1 className="text-xl font-bold">{children}</h1>;

@@ -33,6 +33,8 @@ module.exports = {
         salmon: "#F08B7A",
         violet: "#535BF5",
         "violet-light": "#9C9DE7",
+        "violet-dark": "#4249c4",
+        "violet-darker": "#323793",
         pink: "#ED4B9E",
         gray: "#3D404E",
       },

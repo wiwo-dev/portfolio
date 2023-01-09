@@ -42,7 +42,6 @@ export async function getStaticPaths() {
         },
       };
     }),
-    //paths: [{ params: { slug: "snake" } }, { params: { slug: "2" } }],
     fallback: false, // can also be true or 'blocking'
   };
 }
@@ -50,12 +49,25 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { params } = context;
   const { slug } = params;
-
-  console.log("🚀🚀🚀🚀🚀🚀🚀🚀");
-  console.log(slug);
-
   const query = `
   query {
+    projects: projectCollection(limit: 50, order: position_ASC) {
+      items {
+        sys {
+          id
+        }
+        title
+        slug
+        technologies
+        headline
+        description
+        logo {
+          url
+          width
+          height
+        }
+      }
+    }
     projectCollection(where: {slug: "${slug}"}, limit: 1) {
       items {
         sys {
@@ -80,15 +92,12 @@ export async function getStaticProps(context) {
                 sys {
                   id
                 }
-                
               }
               block {
                 sys {
                   id
                 }
-                
               }
-              
             }
             assets {
               block {
@@ -108,8 +117,8 @@ export async function getStaticProps(context) {
     }
   }
   `;
-
   let project = {};
+  let projects = [];
   try {
     const response = await fetch(
       "https://graphql.contentful.com/content/v1/spaces/9lwq5y1zam6x?access_token=j65pOJCqWBWD6f-7L3VLuWOMA_eRuX-43-PaK3hYnr0",
@@ -122,15 +131,22 @@ export async function getStaticProps(context) {
       }
     );
     const json = await response.json();
-    //console.log(json);
+    console.log(json);
     project = json.data.projectCollection.items[0];
+    projects = json.data.projects.items.map((project) => ({
+      title: project.title,
+      picture: project.logo.url,
+      description: project.description,
+      technologies: project.technologies,
+      href: `/projects/${project.slug}`,
+    }));
   } catch (error) {
     console.log(error);
   }
 
   return {
     // Passed to the page component as props
-    props: { project },
+    props: { project, projects },
     revalidate: 60,
   };
 }
@@ -144,7 +160,7 @@ import { ArrowRight, GithubIcon } from "components/Icons";
 import { FooterSection, ProjectsSection } from "components/sections";
 import Image from "next/image";
 
-export default function Project({ project }) {
+export default function Project({ project, projects }) {
   const Buttons = () => {
     return (
       <div className="mx-auto max-w-screen-xl px-[32px] flex flex-wrap gap-5 py-8 justify-center md:justify-start">
@@ -175,12 +191,20 @@ export default function Project({ project }) {
         title={project.title}
         subline={project.headline}
         image={
-          <Image src={project.logo.url} width={project.logo.width} height={project.logo.height} className="w-[200px]" />
+          <Image
+            src={project.logo?.url}
+            width={project.logo.width}
+            height={project.logo.height}
+            className="w-[200px]"
+            alt="logo"
+          />
         }
       />
       <Buttons />
       <div className="flex flex-col md:flex-row md:justify-between mx-auto max-w-screen-xl px-[32px] min-h-[80vh] gap-20 py-10">
-        <div className="prose">{documentToReactComponents(project.body.json, renderOptions(project.body.links))}</div>
+        <div className="prose max-w-full">
+          {documentToReactComponents(project.body.json, renderOptions(project.body.links))}
+        </div>
         <div className="md:w-[30%]">
           <h3 className="font-bold mb-2">Technologies</h3>
           <div className="flex flex-wrap gap-3 text-sm">
@@ -193,7 +217,7 @@ export default function Project({ project }) {
         </div>
       </div>
       <Buttons />
-      <ProjectsSection />
+      <ProjectsSection projects={projects} />
       <FooterSection />
       {/* <div>{documentToReactComponents(project.body.json, renderOptions(project.body.links))}</div>
       <pre>{JSON.stringify(project, null, 2)}</pre> */}
