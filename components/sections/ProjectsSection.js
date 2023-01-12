@@ -43,7 +43,7 @@ export default function ProjectsSection({ id, projects }) {
           {currentlyVisibleCount < projects.length && (
             <div className="flex justify-center">
               <Button variant="violet" onClick={() => setCurrentlyVisibleCount((current) => current + 1)}>
-                Load more...
+                Show more...
               </Button>
             </div>
           )}
