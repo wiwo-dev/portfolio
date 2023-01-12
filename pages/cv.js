@@ -55,7 +55,7 @@ const data = {
   },
   experience: {
     intro:
-      "I’m a developer with 10 years of experience in the corporate world of Digital Marketing, Social Media, and Video Production. I’m a creative mind with plenty of experience in the digital world. In my work, I strive to create thoughtful, user-centred experiences that adhere to web standards. I build websites and web applications using JavaScript, React and NextJS. In order to “make it pop” I use Framer Motion for animations. ",
+      "I’m a developer with many years of experience in the corporate world of Digital Marketing, Social Media, and Video Production. I’m a creative mind with plenty of experience in the digital world. In my work, I strive to create thoughtful, user-centred experiences that adhere to web standards. I build websites and web applications using JavaScript, React and NextJS. In order to “make it pop” I use Framer Motion for animations. ",
     jobs: [
       {
         company: "Freelance",
