@@ -30,6 +30,7 @@ module.exports = {
         "yellow-base": "#FCD13A",
         "yellow-dark": "#F6CC33",
         "yellow-darker": "#DFB932",
+        "yellow-darker2": "#C99E03",
         salmon: "#F08B7A",
         violet: "#535BF5",
         "violet-light": "#9C9DE7",

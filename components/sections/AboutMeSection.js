@@ -9,6 +9,11 @@ import Button from "components/ui/Button";
 import ArrowRight from "components/Icons/ArrowRight";
 import CVIcon from "components/Icons/CVIcon";
 import RotateOnScroll from "components/scroll/RotateOnScroll";
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "../../tailwind.config.js";
+const twFullConfig = resolveConfig(tailwindConfig);
+
+const underlineColor = twFullConfig.theme.colors["white"];
 
 const aboutme = [
   {
@@ -16,9 +21,9 @@ const aboutme = [
     iconText: "TRUST ME, I'M AN ENGENEER",
     body: () => (
       <>
-        I am a <UnderlineText color="white">Computer Science Engineer</UnderlineText> and have a Masters's degree in{" "}
-        <UnderlineText color="white">Management in Virtual Environments</UnderlineText>. My education gave me a deep
-        understanding of technical and business sides of digital projects' .
+        I am a <UnderlineText color={underlineColor}>Computer Science Engineer</UnderlineText> and have a Masters's
+        degree in <UnderlineText color={underlineColor}>Management in Virtual Environments</UnderlineText>. My education
+        gave me a deep understanding of technical and business sides of digital projects' .
       </>
     ),
     icon: "computer.svg",
@@ -37,8 +42,8 @@ const aboutme = [
     body: () => (
       <>
         I am a good communicator with developed soft skills. I can talk with all project stakeholders in{" "}
-        <UnderlineText color="white">business and technical languages</UnderlineText>. I know the budgeting process, and
-        I can set and track targets.
+        <UnderlineText color={underlineColor}>business and technical languages</UnderlineText>. I know the budgeting
+        process, and I can set and track targets.
       </>
     ),
     icon: "target.svg",
@@ -58,10 +63,10 @@ const aboutme = [
       <>
         Over the course of my career at Red Bull I have been managing a Team responsible for over 20 social media
         channels. I gained plenty of{" "}
-        <UnderlineText color="white">experience in all sorts of digital projects</UnderlineText>. My work has ranged
-        from landing pages to complex systems and platforms. Starting with those with a modest budget where I coded some
-        of the elements myself to the bigger ones in which I led the project with help from a{" "}
-        <UnderlineText color="white">variety of external agencies</UnderlineText>.
+        <UnderlineText color={underlineColor}>experience in all sorts of digital projects</UnderlineText>. My work has
+        ranged from landing pages to complex systems and platforms. Starting with those with a modest budget where I
+        coded some of the elements myself to the bigger ones in which I led the project with help from a{" "}
+        <UnderlineText color={underlineColor}>variety of external agencies</UnderlineText>.
       </>
     ),
     icon: "business.svg",
@@ -79,9 +84,10 @@ const aboutme = [
     iconText: "AESTETIC DESIGN AND GRAPHICS",
     body: () => (
       <>
-        My work has thought me the importance of <UnderlineText color="white">high-quality design</UnderlineText>. In my
-        youth I worked as a photographer, I learned Photoshop, Lightroom, and Illustrator which recently helped me
-        quickly learn Figma which I use to design user interfaces.
+        My work has thought me the importance of{" "}
+        <UnderlineText color={underlineColor}>high-quality design</UnderlineText>. In my youth I worked as a
+        photographer, I learned Photoshop, Lightroom, and Illustrator which recently helped me quickly learn Figma which
+        I use to design user interfaces.
       </>
     ),
     icon: "design.svg",
@@ -101,10 +107,10 @@ const aboutme = [
       <>
         I’m also a certified kitesurfing, windsurfing, and skiing instructor. I’ve been teaching in many places around
         the globe. This experience influenced my ability to{" "}
-        <UnderlineText color="white">prepare presentations</UnderlineText> and{" "}
-        <UnderlineText color="white">present in front of people</UnderlineText>.{" "}
-        <UnderlineText color="white">Sharing knowledge</UnderlineText> in an understandable and easy-to-absorb manner is
-        one of my skills.
+        <UnderlineText color={underlineColor}>prepare presentations</UnderlineText> and{" "}
+        <UnderlineText color={underlineColor}>present in front of people</UnderlineText>.{" "}
+        <UnderlineText color={underlineColor}>Sharing knowledge</UnderlineText> in an understandable and easy-to-absorb
+        manner is one of my skills.
       </>
     ),
     icon: "teacher.svg",
@@ -243,12 +249,12 @@ export default function AboutMeSection({ id }) {
               aboutme.map((el, ind) => (
                 <div
                   key={ind}
-                  className="col-span-1 col-start-3 row-start-1 row-span-6 bg-blue "
+                  className="col-span-1 col-start-3 row-span-6 bg-blue -mt-1 "
                   style={{ gridRowStart: ind + 1, gridRowEnd: aboutme.length + 1 }}>
-                  <div key={ind} className="sticky top-0 flex justify-center pt-20">
+                  <div key={ind} className="sticky top-0 flex justify-center pt-16">
                     <RotateOnScroll>
                       <StampTextIcon text={el.iconText} {...el.stampSettings} radious={settings.stampRadious}>
-                        <img src={`/emojis/${el.icon}`} />
+                        <img src={`/emojis/${el.icon}`} alt={`emoji ${el.icon}`} />
                       </StampTextIcon>
                     </RotateOnScroll>
                   </div>
