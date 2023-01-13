@@ -32,7 +32,7 @@ const data = {
   ],
   heading: {
     intro:
-      "I’m a developer with 10 years of experience in the corporate world of Digital Marketing. I am a Computer Science Engineer. My education and work experience let me communicate in both technical and business languages. ",
+      "I’m a developer with many years of experience in the corporate world of Digital Marketing. I am a Computer Science Engineer. My education and work experience let me communicate in both technical and business languages. ",
   },
   education: {
     intro: "",
