@@ -181,10 +181,10 @@ export default function cv() {
               {data.education.schools.map((el, ind) => (
                 <div key={ind}>
                   <div className="flex flex-col md:flex-row justify-between md:gap-10">
-                    <p className="text-lg">
-                      <span className="font-bold">{el.eschool}</span>
-                      <span>{`${el.field} (${el.level})`}</span>
-                    </p>
+                    <div className="text-lg">
+                      <p className="font-bold">{el.school}</p>
+                      <p>{`${el.field} (${el.level})`}</p>
+                    </div>
                     <p className="flex-none text-sm lg:text-base">{el.time}</p>
                   </div>
                   <div className="text-base opacity-60">{el.location}</div>
