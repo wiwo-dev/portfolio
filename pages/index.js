@@ -81,7 +81,7 @@ export async function getStaticProps() {
     technologies: project.technologies,
     href: `/projects/${project.slug}`,
   }));
-  console.log(projects);
+
   return {
     props: {
       projects,

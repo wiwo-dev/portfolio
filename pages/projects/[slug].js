@@ -131,7 +131,7 @@ export async function getStaticProps(context) {
       }
     );
     const json = await response.json();
-    console.log(json);
+    //console.log(json);
     project = json.data.projectCollection.items[0];
     projects = json.data.projects.items.map((project) => ({
       title: project.title,

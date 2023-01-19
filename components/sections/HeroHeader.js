@@ -36,7 +36,7 @@ export default function HeroHeader() {
           </h1>
           <p className="text-xl lg:text-2xl font-bold tracking-tight">I&apos;m Wojciech Więcławski</p>
           <p className="mt-7 text-lg">
-            I’m a Web Developer with 10 years of experience in the corporate world of Digital Marketing, Social Media,
+            I’m a Web Developer with many years of experience in the corporate world of Digital Marketing, Social Media,
             and Video Production.
           </p>
           <p className="mt-7 text-lg">I’m currently looking for new job opportunities as a Web Developer.</p>
