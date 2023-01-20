@@ -291,12 +291,12 @@ export default function cv() {
                   </p>
                 </div>
               </div>
-              <CVHeadingUnderline>Courses</CVHeadingUnderline>
+              {/* <CVHeadingUnderline>Courses</CVHeadingUnderline>
               <p className="md:pr-16">
                 In addition to Computer Science studies, I have completed many programming courses to develop my skills
                 in modern web technologies. Some of these are The Web Developer Bootcamp (Colt Steel, Udemy), The Modern
                 React Bootcamp (Colt Steel, Udemy), The Modern Javascript Bootcamp (Colt Steele, Stephen Grider, Udemy).
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
