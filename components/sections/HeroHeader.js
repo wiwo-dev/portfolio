@@ -41,9 +41,9 @@ export default function HeroHeader() {
           </p>
           <p className="mt-7 text-lg">I’m currently looking for new job opportunities as a Web Developer.</p>
           <div className="flex gap-5 py-7">
-            <Button href="/#contact">
+            <Button href="/#projects">
               <span className="flex items-center gap-2">
-                Contact me <ArrowRight color="black" />
+                My projects <ArrowRight color="black" />
               </span>
             </Button>
             {/* <Button variant="light">Contact me</Button> */}
