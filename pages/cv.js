@@ -33,7 +33,7 @@ const data = {
   ],
   heading: {
     intro:
-      "I’m a developer with many years of experience in the corporate world of Digital Marketing. I am a Computer Science Engineer. My education and work experience let me communicate in both technical and business languages. ",
+      "I’m a developer with many years of experience in the corporate world of Digital Marketing. I am a Computer Science Engineer. My education and work experience let me communicate in both technical and business languages. Besides coding in various technologies I also design user interfaces.",
   },
   education: {
     intro: "",
@@ -202,7 +202,7 @@ export default function cv() {
                 <div>
                   <p className="pt-1 md:pr-16">
                     Building web pages and web applications with HTML, CSS, JavaScript, React, NextJS, and sometimes
-                    WordPress or Webflow if needed.
+                    WordPress or Webflow if needed. Designing user interfaces in Figma.
                   </p>
                   <p className="pt-1 md:pr-16">Some personal projects I have been working on:</p>
                   <ul className="list-disc pl-5">
