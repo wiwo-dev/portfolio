@@ -158,8 +158,16 @@ import { ProjectHeader } from "components/project";
 import { ArrowRight, GithubIcon } from "components/Icons";
 import { FooterSection, ProjectsSection } from "components/sections";
 import Image from "next/image";
+import { useRef } from "react";
+import { useScroll, motion } from "framer-motion";
 
 export default function Project({ project, projects }) {
+  const topButtonsRef = useRef(null);
+  let { scrollYProgress } = useScroll({
+    target: topButtonsRef,
+    offset: ["end start", "end -50px"],
+  });
+
   const Buttons = () => {
     return (
       <div className="mx-auto max-w-screen-xl px-[32px] flex flex-wrap gap-5 py-8 justify-center md:justify-start">
@@ -194,23 +202,42 @@ export default function Project({ project, projects }) {
           />
         }
       />
-      <Buttons />
+      <div ref={topButtonsRef}>
+        <Buttons />
+      </div>
       <div className="flex flex-col md:flex-row md:justify-between mx-auto max-w-screen-xl px-[32px] min-h-[80vh] gap-20 py-10">
         <div className="prose max-w-full">
           {documentToReactComponents(project.body.json, renderOptions(project.body.links))}
         </div>
         <div className="md:w-[30%]">
-          <h3 className="font-bold mb-2">Technologies</h3>
-          <div className="flex flex-wrap gap-3 text-sm">
-            {project.technologies.map((el, ind) => (
-              <span key={ind} className="bg-yellow-base px-[16px] py-[8px] rounded-3xl antialiased whitespace-nowrap">
-                {el}
-              </span>
-            ))}
+          <div className="sticky top-14">
+            <h3 className="font-bold mb-2">Technologies</h3>
+            <div className="flex flex-wrap gap-3 text-sm">
+              {project.technologies.map((el, ind) => (
+                <span key={ind} className="bg-yellow-base px-[16px] py-[8px] rounded-3xl antialiased whitespace-nowrap">
+                  {el}
+                </span>
+              ))}
+            </div>
+            <motion.div style={{ opacity: scrollYProgress }} className="w-full mt-5">
+              <div className="mx-auto max-w-screen-xl flex flex-wrap gap-5 py-8 justify-center md:justify-start">
+                <Button href={project.projectUrl} target="_blank">
+                  <span className="flex items-center gap-2">
+                    OPEN THE PROJECT <ArrowRight color="black" />
+                  </span>
+                </Button>
+                <Button variant="light" href={project.githubUrl} target="_blank">
+                  <span className="flex items-center gap-3">
+                    CHECK THE CODE
+                    <GithubIcon color="black" size={24} />
+                  </span>
+                </Button>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
-      <Buttons />
+
       <ProjectsSection projects={projects} />
       <FooterSection />
       {/* <div>{documentToReactComponents(project.body.json, renderOptions(project.body.links))}</div>

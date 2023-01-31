@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { useRef } from "react";
 import Button from "components/ui/Button";
 import { motion, useScroll, useTransform, useSpring, useAnimationControls } from "framer-motion";

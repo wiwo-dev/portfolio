@@ -8,8 +8,10 @@ export default function IntroSection() {
         <p className="text-lg lg:text-xl lg:w-[60%]">
           I build <UnderlineText color="white">Websites</UnderlineText> and{" "}
           <UnderlineText color="white">Web Applications</UnderlineText>. My go-to technologies are{" "}
-          <UnderlineText color="white">JavaScript, React and NextJS</UnderlineText>, but I’m always open to trying and
-          learning new things.
+          <UnderlineText color="white">JavaScript</UnderlineText>,{" "}
+          <UnderlineText color="white">TypeScript</UnderlineText>, <UnderlineText color="white">React</UnderlineText>{" "}
+          and <UnderlineText color="white"> NextJS</UnderlineText>, but I’m always open to trying and learning new
+          things.
         </p>
       </div>
     </section>

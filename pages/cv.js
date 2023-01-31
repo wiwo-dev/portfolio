@@ -11,6 +11,7 @@ const data = {
     "HTML",
     "CSS",
     "JavaScript",
+    "TypeScript",
     "React",
     "NextJS",
     "Node.js",
