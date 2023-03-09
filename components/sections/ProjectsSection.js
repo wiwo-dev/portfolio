@@ -12,7 +12,7 @@ export default function ProjectsSection({ id, projects }) {
   const ref = useRef(null);
   const { windowWidth } = useWindowWidth();
 
-  const [currentlyVisibleCount, setCurrentlyVisibleCount] = useState(3);
+  const [currentlyVisibleCount, setCurrentlyVisibleCount] = useState(5);
 
   return (
     <section id={id} className="min-h-screen bg-gray ">
@@ -79,11 +79,11 @@ function Project({ title, description, picture, technologies = [], href }) {
   const ref = useRef(null);
   let { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "start 70%"],
+    offset: ["start end", "start 77%"],
   });
   let { scrollYProgress: scrollYProgress2 } = useScroll({
     target: ref,
-    offset: ["start end", "start 20%"],
+    offset: ["start end", "start 40%"],
   });
   let x1 = useTransform(useSpring(scrollYProgress), [0, 1], ["200px", "0px"]);
   let x2 = useTransform(useSpring(scrollYProgress), [0, 1], ["-200px", "0px"]);
