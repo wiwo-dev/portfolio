@@ -13,6 +13,7 @@ const data = {
     "JavaScript",
     "TypeScript",
     "React",
+    "React Native",
     "NextJS",
     "Node.js",
     "Tailwind CSS",
