@@ -14,7 +14,7 @@ export default function TechnologiesSection() {
         </div>
         <div className="text-white antialiased pt-10">
           <p className="text-lg lg:text-xl">
-            My favourite UI library is React. For more complex projects I like to use NextJS. As for styling, I know
+            My favourite UI library is React. For more complex projects I like to use Next.js. As for styling, I know
             CSS/SCSS and BEM naming convention, but generally prefer Tailwind CSS which makes writing reusable
             components easier and faster. I’m also familiar with Node.js and Express. When there is a need to work with
             a database I like to use Prisma or Google’s Firestore. For less technical visitors: the above means I know

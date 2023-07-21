@@ -27,7 +27,7 @@ export default function ProjectsSection2({ id }) {
             title="Ecommerce platform"
             picture="/projects-logos/veggies.png"
             description="It’s an online shop which can be used for businesses that sell multiple products that are usually bought in more than one quantity."
-            technologies={["NextJS", "React", "Prisma", "Stripe", "Next Auth", "Imgix", "Tailwind CSS"]}
+            technologies={["Next.js", "React", "Prisma", "Stripe", "Next Auth", "Imgix", "Tailwind CSS"]}
             href="/projects/ecommerce"
           />
           <Project

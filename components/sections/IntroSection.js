@@ -14,7 +14,7 @@ export default function IntroSection() {
           My go-to technologies are <UnderlineText color="white">JavaScript</UnderlineText>,{" "}
           <UnderlineText color="white">TypeScript</UnderlineText>, <UnderlineText color="white">React</UnderlineText>,{" "}
           <UnderlineText color="white">React Native</UnderlineText> and{" "}
-          <UnderlineText color="white"> NextJS</UnderlineText>. I’m always open to trying and learning new things.
+          <UnderlineText color="white"> Next.js</UnderlineText>. I’m always open to trying and learning new things.
         </p>
       </div>
     </section>

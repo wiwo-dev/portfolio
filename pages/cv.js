@@ -202,17 +202,17 @@ export default function cv() {
                 </div>
                 <div>
                   <p className="pt-1 md:pr-16">
-                    Building web pages and web applications with HTML, CSS, JavaScript, React, NextJS, and sometimes
+                    Building web pages and web applications with HTML, CSS, JavaScript, React, Next.js, and sometimes
                     WordPress or Webflow if needed. Designing user interfaces in Figma.
                   </p>
                   <p className="pt-1 md:pr-16">Some personal projects I have been working on:</p>
                   <ul className="list-disc pl-5">
-                    <li className="list-item">Full stack eCommerce Platform (NextJS, Prisma, Next Auth), </li>
+                    <li className="list-item">Full stack eCommerce Platform (Next.js, Prisma, Next Auth), </li>
                     <li className="list-item">Responsive Snake Game (React, Firestore), </li>
                     <li className="list-item">Sorting Algorithms Visualiser (React, Framer Motion, ChakraUI)</li>
                   </ul>
                   <p className="pt-1 md:pr-16 pl-5">
-                    Description and source code is available at my portfolio website (NextJS, GraphQL, Contentful,
+                    Description and source code is available at my portfolio website (Next.js, GraphQL, Contentful,
                     Framer Motion){" "}
                     <span className="underline">
                       <Link href="https://wiwo.dev">https://wiwo.dev</Link>
