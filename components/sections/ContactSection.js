@@ -3,6 +3,7 @@ import { Button, Heading, MyLink } from "components/ui";
 import { Input, Textarea } from "components/ui/form";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { LinkedInIcon } from "components/Icons";
 
 // Example POST method implementation:
 async function postData(url = "", data = {}) {
@@ -58,12 +59,21 @@ export default function ContactSection({ id }) {
           </Heading>
         </div>
         <p className="text-lg lg:text-xl text-white">
-          Got a question or proposal, or just want to say hello? Go ahead. Use the form below or send me an email to{" "}
+          Got a question, proposal, or just want to say hello? Go ahead! 👋
+        </p>
+        <p className="text-lg lg:text-xl text-white">
+          Send me an email to{" "}
           <MyLink className="" href="mailto:wojtekwieclawski@gmail.com?subject=Hello">
             wojtekwieclawski@gmail.com
           </MyLink>
         </p>
-        <div className="relative overflow-hidden">
+        <p className="text-lg lg:text-xl text-white">
+          Or contact me through LinkedIn at{" "}
+          <MyLink className="" href="https://www.linkedin.com/in/wojciech-wieclawski/">
+            Wojciech Wieclawski
+          </MyLink>
+        </p>
+        {/* <div className="relative overflow-hidden">
           <motion.form
             animate={{ x: emailSend || isError ? "100vw" : 0 }}
             className="flex flex-col gap-2"
@@ -122,7 +132,7 @@ export default function ContactSection({ id }) {
               </p>
             </motion.div>
           )}
-        </div>
+        </div> */}
         {/* <Button onClick={() => setEmailSend((prev) => !prev)}>FAKE SEND</Button>
         {emailSend ? "true" : "false"} */}
       </div>

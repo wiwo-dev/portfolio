@@ -64,8 +64,8 @@ const aboutme = [
         Over the course of my career at Red Bull I have been managing a Team responsible for over 20 social media
         channels. I gained plenty of{" "}
         <UnderlineText color={underlineColor}>experience in all sorts of digital projects</UnderlineText>. My work has
-        ranged from landing pages to complex systems and platforms. Starting with those with a modest budget where I
-        coded some of the elements myself to the bigger ones in which I led the project with help from a{" "}
+        ranged from landing pages to complex systems and platforms. Starting with those with a modest budget where I was
+        coding myself to the bigger ones in which I led the project with help from a{" "}
         <UnderlineText color={underlineColor}>variety of external agencies</UnderlineText>.
       </>
     ),
@@ -86,8 +86,8 @@ const aboutme = [
       <>
         My work has thought me the importance of{" "}
         <UnderlineText color={underlineColor}>high-quality design</UnderlineText>. In my youth I worked as a
-        photographer, I learned Photoshop, Lightroom, and Illustrator which recently helped me quickly learn Figma which
-        I use to design user interfaces.
+        photographer, I learned Photoshop, Lightroom, and Illustrator which helped me quickly learn Figma that I use to
+        design user interfaces.
       </>
     ),
     icon: "design.svg",
@@ -235,7 +235,7 @@ export default function AboutMeSection({ id }) {
                     paddingTop={10}
                     iconSize={50}
                     innerCircleMaring={38}>
-                    <img src={`/emojis/${el.icon}`} />
+                    <img src={`/emojis/${el.icon}`} alt="emoji" />
                   </StampTextIcon>
                 }
                 key={ind}>
@@ -274,7 +274,7 @@ export default function AboutMeSection({ id }) {
               </p>
             </div>
             <div className="md:px-10 w-full md:w-[50%] flex justify-start md:justify-center">
-              <Button size="big" href="/cv">
+              <Button size="big" href="/Resume-Wojciech-Wieclawski.pdf">
                 <span className="pl-3 flex items-center gap-2">
                   My resume <ArrowRight color="black" />
                 </span>

@@ -5,8 +5,9 @@ sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 async function sendEmail(req, res) {
   console.log(req.body);
   console.log("SENDING");
+  let sendgridResponse;
   try {
-    await sendgrid.send({
+    sendgridResponse = await sendgrid.send({
       to: "wojtekwieclawski@gmail.com",
       from: {
         email: "contactform@wiwoproduction.com",
@@ -21,6 +22,7 @@ async function sendEmail(req, res) {
       <div style="white-space: pre-wrap;">${req.body.body}</div>
       `,
     });
+    console.log(sendgridResponse);
   } catch (error) {
     return res.status(error.statusCode || 500).json({ error: error.message });
   }
