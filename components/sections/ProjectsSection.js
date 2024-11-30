@@ -72,16 +72,7 @@ function ProjectCard({ title, description, technologies = [], href = "#", cta, g
           ))}
         </div>
       </div>
-      <div className={cn("grid grid-cols-3")}>
-        <div className="">
-          {projectUrl && (
-            <Link href={projectUrl} className="flex items-center gap-2 uppercase hover:underline" target="_blank">
-              {cta ?? "OPEN"}
-              <ExternalLink size={16} />
-            </Link>
-          )}
-        </div>
-
+      <div className={cn("grid grid-cols-2 lg:grid-cols-3")}>
         <div className="">
           {githubUrl && (
             <Link href={githubUrl} className="flex items-center gap-2 uppercase hover:underline" target="_blank">
@@ -91,7 +82,19 @@ function ProjectCard({ title, description, technologies = [], href = "#", cta, g
           )}
         </div>
 
-        <Link href={href} className="text-right uppercase hover:underline">
+        <div className="row-start-2 lg:row-start-1">
+          {projectUrl && (
+            <Link
+              href={projectUrl}
+              className="flex items-center gap-2 uppercase hover:underline whitespace-nowrap"
+              target="_blank">
+              {cta ?? "OPEN"}
+              <ExternalLink size={16} />
+            </Link>
+          )}
+        </div>
+
+        <Link href={href} className="text-right uppercase hover:underline whitespace-nowrap">
           READ MORE <ArrowRight size={20} />
         </Link>
       </div>
@@ -131,7 +134,7 @@ function Project({ title, description, picture, technologies = [], href, githubU
         />
       </motion.div>
       <motion.div
-        className="max-lg:z-20 max-lg:-mb-10 flex flex-col p-10 justify-center items-center border-[8px] rounded-tl-[80px] rounded-br-[80px] rounded-tr-[20px] rounded-bl-[20px] border-black bg-white  lg:w-1/2"
+        className="max-lg:z-20 relative max-lg:-mb-10 flex flex-col p-10 justify-center items-center border-[8px] rounded-tl-[80px] rounded-br-[80px] rounded-tr-[20px] rounded-bl-[20px] border-black bg-white  lg:w-1/2"
         style={{ x: windowWidth >= 1024 ? x1 : 0, minHeight: windowWidth > 768 ? "100%" : "100px" }}>
         <Link href={href} className="flex flex-col justify-center items-center">
           <Image src={`${picture}`} width={250} height={166} className="w-[250px]" alt={`Project ${title} logo`} />

@@ -18,7 +18,7 @@ export default function MobileMenu({ onClose }) {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 h-screen w-screen z-50 bg-gray"
+      className="fixed top-0 left-0 h-[100dvh] w-screen z-50 bg-gray"
       initial={{ y: "-100%" }}
       animate={{ y: 0 }}
       exit={{ y: "-100%" }}

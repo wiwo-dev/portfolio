@@ -38,7 +38,7 @@ export default function HeroHeader() {
             I’m a Web Developer with many years of experience in the corporate world of Digital Marketing, Social Media,
             and Video Production.
           </p>
-          <p className="mt-7 text-lg">I’m currently looking for new job opportunities as a Web Developer.</p>
+          {/* <p className="mt-7 text-lg">I’m currently looking for new job opportunities as a Web Developer.</p> */}
           <div className="flex gap-5 py-7">
             <Button href="/#projects">
               <span className="flex items-center gap-2">

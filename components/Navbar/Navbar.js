@@ -8,6 +8,7 @@ import MobileMenu from "./MobileMenu";
 let scrollThreshold = [0, 50];
 
 import { links } from "data/menu";
+import { Menu } from "lucide-react";
 
 export default function Navbar() {
   let { scrollY } = useScroll();
@@ -82,7 +83,7 @@ export default function Navbar() {
                   onClick={() => {
                     setIsMenuOpen((prev) => !prev);
                   }}>
-                  MENU
+                  <Menu />
                 </a>
               </>
             )}

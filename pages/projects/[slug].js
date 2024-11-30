@@ -62,6 +62,9 @@ export async function getStaticProps(context) {
         headline
         description
         year
+        cta
+        githubUrl
+        projectUrl
         logo {
           url
           width
@@ -80,6 +83,7 @@ export async function getStaticProps(context) {
         githubUrl
         projectUrl
         year
+        cta
         logo {
           url
           width
@@ -142,6 +146,9 @@ export async function getStaticProps(context) {
       technologies: project.technologies,
       href: `/projects/${project.slug}`,
       year: project.year,
+      cta: project.cta,
+      githubUrl: project.githubUrl,
+      projectUrl: project.projectUrl,
     }));
   } catch (error) {
     console.log(error);
