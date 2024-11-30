@@ -22,8 +22,9 @@ const aboutme = [
     body: () => (
       <>
         I am a <UnderlineText color={underlineColor}>Computer Science Engineer</UnderlineText> and have a Masters's
-        degree in <UnderlineText color={underlineColor}>Management in Virtual Environments</UnderlineText>. My education
-        gave me a deep understanding of technical and business sides of digital projects' .
+        degree in <UnderlineText color={underlineColor}>Management in Virtual Environments</UnderlineText>. <br />
+        I'm a Developer who understands digital marketing, thanks to the valuable lessons (and maybe a few energy
+        drinks) I picked up while working at Red Bull.
       </>
     ),
     icon: "computer.svg",
@@ -41,9 +42,9 @@ const aboutme = [
     iconText: "I UNDERSTAND BUSINESS & TECHNOLOGY",
     body: () => (
       <>
-        I am a good communicator with developed soft skills. I can talk with all project stakeholders in{" "}
-        <UnderlineText color={underlineColor}>business and technical languages</UnderlineText>. I know the budgeting
-        process, and I can set and track targets.
+        I’m a strong communicator, comfortable speaking both{" "}
+        <UnderlineText color={underlineColor}>business and technical languages</UnderlineText>. I understand budgeting,
+        set and track targets, and stay easygoing yet professional and quality-focused.
       </>
     ),
     icon: "target.svg",
@@ -61,12 +62,14 @@ const aboutme = [
     iconText: "TEAM & PROJECT MANAGEMENT",
     body: () => (
       <>
-        Over the course of my career at Red Bull I have been managing a Team responsible for over 20 social media
-        channels. I gained plenty of{" "}
-        <UnderlineText color={underlineColor}>experience in all sorts of digital projects</UnderlineText>. My work has
-        ranged from landing pages to complex systems and platforms. Starting with those with a modest budget where I was
-        coding myself to the bigger ones in which I led the project with help from a{" "}
-        <UnderlineText color={underlineColor}>variety of external agencies</UnderlineText>.
+        At Red Bull, I managed a team overseeing over 20 social media channels and gained plenty of{" "}
+        <UnderlineText color={underlineColor}>experience in all sorts of digital projects</UnderlineText> from landing
+        pages to complex systems and platforms.
+        <br />
+        <br />
+        {/* <div className="mt-3" /> */}
+        I’ve collaborated with teams across Australia, Indonesia, Europe, India, and the US, combining technical
+        expertise with strong communication and management skills to deliver quality results.
       </>
     ),
     icon: "business.svg",
@@ -84,10 +87,14 @@ const aboutme = [
     iconText: "AESTETIC DESIGN AND GRAPHICS",
     body: () => (
       <>
-        My work has thought me the importance of{" "}
-        <UnderlineText color={underlineColor}>high-quality design</UnderlineText>. In my youth I worked as a
-        photographer, I learned Photoshop, Lightroom, and Illustrator which helped me quickly learn Figma that I use to
-        design user interfaces.
+        My work has taught me the value of{" "}
+        <UnderlineText color={underlineColor}>high-quality design and branding</UnderlineText>. Back in the days I used
+        to work as a photographer and video editor. I know Adobe package, Final Cut and of course Figma, which helps me
+        communicate effectively with designers.
+        <br />
+        <br />I also have a passion for crafting sleek{" "}
+        <UnderlineText color={underlineColor}>micro-animations</UnderlineText> and interactive elements that make
+        websites truly come alive.
       </>
     ),
     icon: "design.svg",
@@ -105,12 +112,12 @@ const aboutme = [
     iconText: "I KNOW HOW TO SHARE KNOWLADGE",
     body: () => (
       <>
-        I’m also a certified kitesurfing, windsurfing, and skiing instructor. I’ve been teaching in many places around
-        the globe. This experience influenced my ability to{" "}
+        I’m also a certified kitesurfing, windsurfing, and skiing instructor. Why am I mentioning this in my dev
+        portfolio? It has influenced my ability to{" "}
         <UnderlineText color={underlineColor}>prepare presentations</UnderlineText> and{" "}
-        <UnderlineText color={underlineColor}>present in front of people</UnderlineText>.{" "}
-        <UnderlineText color={underlineColor}>Sharing knowledge</UnderlineText> in an understandable and easy-to-absorb
-        manner is one of my skills.
+        <UnderlineText color={underlineColor}>present confidently in front of people</UnderlineText> and{" "}
+        <UnderlineText color={underlineColor}>sharing knowledge</UnderlineText> in a clear and easy-to-understand
+        manner.
       </>
     ),
     icon: "teacher.svg",
@@ -151,9 +158,9 @@ const settings = {
 };
 
 export default function AboutMeSection({ id }) {
-  const { windowWidth, currentScreen } = useWindowWidth();
+  const { windowWidth } = useWindowWidth();
 
-  const stampsHorizontalWidthScroll = (aboutme.length + 0.2) * (settings.stampRadious + settings.stampsGap);
+  //const stampsHorizontalWidthScroll = (aboutme.length + 0.2) * (settings.stampRadious + settings.stampsGap);
 
   const ref = useRef(null);
   let { scrollYProgress } = useScroll({

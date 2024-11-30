@@ -10,11 +10,12 @@ export default function WhatICanHelpYouWith2() {
           <UnderlineText color="pink">What is this site?</UnderlineText>
         </h1>
         <div className="flex flex-col md:flex-row">
-          <div className="text-white md:w-[60%] antialiased">
+          <div className="text-white md:w-[90%] antialiased">
             <p className="text-lg lg:text-xl max-lg:pt-10 lg:pt-3">
-              This is my portfolio website where I present some of my skills and programming projects that I’ve been
-              working on recently. Contact me if you have a project that you need help with. Let’s see what I can do for
-              you.
+              This is my portfolio website, where I showcase some of my skills and programming projects I’ve worked on
+              (though not always recently). I wish I had more time to update it regularly, but hey, it’s better to stay
+              busy with client projects than spend all my time on the portfolio! Feel free to contact me if you have a
+              project you need help with—let’s see what I can do for you.
             </p>
             {/* <p className="text-lg lg:text-xl max-lg:pt-10 lg:pt-3">
               If you have a project in mind, please do not hesitate to contact me. Let's see what I can do for you.

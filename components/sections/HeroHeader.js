@@ -77,6 +77,7 @@ export default function HeroHeader() {
               className="absolute bottom-0 right-[30px] lg:-right-[0px] xl:-right-[0px] w-[100px] md:w-[200px] lg:w-[250px]"
               alt="hand-hello-circle"
             /> */}
+
             <motion.img
               style={{ rotateZ: rotation }}
               animate={handControls}

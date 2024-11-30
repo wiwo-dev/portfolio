@@ -46,6 +46,10 @@ export async function getStaticProps() {
             technologies
             headline
             description
+            githubUrl
+            projectUrl
+            cta
+            year
             logo {
                 url
                 width
@@ -80,6 +84,10 @@ export async function getStaticProps() {
     description: project.description,
     technologies: project.technologies,
     href: `/projects/${project.slug}`,
+    cta: project.cta,
+    githubUrl: project.githubUrl,
+    projectUrl: project.projectUrl,
+    year: project.year,
   }));
 
   return {

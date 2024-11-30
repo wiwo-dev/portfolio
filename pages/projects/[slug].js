@@ -61,6 +61,7 @@ export async function getStaticProps(context) {
         technologies
         headline
         description
+        year
         logo {
           url
           width
@@ -78,6 +79,7 @@ export async function getStaticProps(context) {
         slug
         githubUrl
         projectUrl
+        year
         logo {
           url
           width
@@ -139,6 +141,7 @@ export async function getStaticProps(context) {
       description: project.description,
       technologies: project.technologies,
       href: `/projects/${project.slug}`,
+      year: project.year,
     }));
   } catch (error) {
     console.log(error);
@@ -176,12 +179,14 @@ export default function Project({ project, projects }) {
             OPEN THE PROJECT <ArrowRight color="black" />
           </span>
         </Button>
-        <Button variant="light" href={project.githubUrl} target="_blank">
-          <span className="flex items-center gap-3">
-            CHECK THE CODE
-            <GithubIcon color="black" size={24} />
-          </span>
-        </Button>
+        {project.githubUrl && (
+          <Button variant="light" href={project.githubUrl} target="_blank">
+            <span className="flex items-center gap-3">
+              CHECK THE CODE
+              <GithubIcon color="black" size={24} />
+            </span>
+          </Button>
+        )}
       </div>
     );
   };
@@ -192,6 +197,7 @@ export default function Project({ project, projects }) {
       <ProjectHeader
         title={project.title}
         subline={project.headline}
+        year={project.year}
         image={
           <Image
             src={project.logo?.url}
@@ -226,12 +232,14 @@ export default function Project({ project, projects }) {
                     OPEN THE PROJECT <ArrowRight color="black" />
                   </span>
                 </Button>
-                <Button variant="light" href={project.githubUrl} target="_blank">
-                  <span className="flex items-center gap-3">
-                    CHECK THE CODE
-                    <GithubIcon color="black" size={24} />
-                  </span>
-                </Button>
+                {project.githubUrl && (
+                  <Button variant="light" href={project.githubUrl} target="_blank">
+                    <span className="flex items-center gap-3">
+                      CHECK THE CODE
+                      <GithubIcon color="black" size={24} />
+                    </span>
+                  </Button>
+                )}
               </div>
             </motion.div>
           </div>

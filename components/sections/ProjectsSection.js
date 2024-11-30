@@ -7,12 +7,14 @@ import useWindowWidth from "utils/useWindowWidth";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "components/ui";
+import { ExternalLink, Github } from "lucide-react";
+import { cn } from "utils/utils";
 
 export default function ProjectsSection({ id, projects }) {
   const ref = useRef(null);
   const { windowWidth } = useWindowWidth();
 
-  const [currentlyVisibleCount, setCurrentlyVisibleCount] = useState(5);
+  const [currentlyVisibleCount, setCurrentlyVisibleCount] = useState(7);
 
   return (
     <section id={id} className="min-h-screen bg-gray ">
@@ -36,6 +38,10 @@ export default function ProjectsSection({ id, projects }) {
                   description={project.description}
                   technologies={project.technologies}
                   href={project.href}
+                  cta={project.cta}
+                  githubUrl={project.githubUrl}
+                  projectUrl={project.projectUrl}
+                  year={project.year}
                 />
               )
           )}
@@ -53,7 +59,7 @@ export default function ProjectsSection({ id, projects }) {
   );
 }
 
-function ProjectCard({ title, description, technologies = [], href = "#" }) {
+function ProjectCard({ title, description, technologies = [], href = "#", cta, githubUrl, projectUrl, year }) {
   return (
     <div className="min-h-[200px] w-100 h-full max-lg:pt-16 border-[8px] rounded-[20px] rounded-tr-[60px] rounded-bl-[60px]  border-black bg-violet flex flex-col justify-between text-left gap-5 text-white p-10">
       <div className="flex flex-col gap-5">
@@ -66,16 +72,34 @@ function ProjectCard({ title, description, technologies = [], href = "#" }) {
           ))}
         </div>
       </div>
-      <Link href={href} className="text-right">
-        <span>
+      <div className={cn("grid grid-cols-3")}>
+        <div className="">
+          {projectUrl && (
+            <Link href={projectUrl} className="flex items-center gap-2 uppercase hover:underline" target="_blank">
+              {cta ?? "OPEN"}
+              <ExternalLink size={16} />
+            </Link>
+          )}
+        </div>
+
+        <div className="">
+          {githubUrl && (
+            <Link href={githubUrl} className="flex items-center gap-2 uppercase hover:underline" target="_blank">
+              GITHUB
+              <Github size={16} />
+            </Link>
+          )}
+        </div>
+
+        <Link href={href} className="text-right uppercase hover:underline">
           READ MORE <ArrowRight size={20} />
-        </span>
-      </Link>
+        </Link>
+      </div>
     </div>
   );
 }
 
-function Project({ title, description, picture, technologies = [], href }) {
+function Project({ title, description, picture, technologies = [], href, githubUrl, projectUrl, cta, year }) {
   const ref = useRef(null);
   let { scrollYProgress } = useScroll({
     target: ref,
@@ -95,7 +119,16 @@ function Project({ title, description, picture, technologies = [], href }) {
       ref={ref}
       className="flex flex-col-reverse max-w-screen-sm mx-auto lg:max-w-full lg:w-full lg:flex-row-reverse lg:gap-5">
       <motion.div style={{ x: windowWidth >= 1024 ? x2 : 0, y: windowWidth < 1024 ? y : 0 }} className="lg:w-1/2">
-        <ProjectCard title={title} description={description} technologies={technologies} href={href} />
+        <ProjectCard
+          title={title}
+          description={description}
+          technologies={technologies}
+          href={href}
+          githubUrl={githubUrl}
+          projectUrl={projectUrl}
+          cta={cta}
+          year={year}
+        />
       </motion.div>
       <motion.div
         className="max-lg:z-20 max-lg:-mb-10 flex flex-col p-10 justify-center items-center border-[8px] rounded-tl-[80px] rounded-br-[80px] rounded-tr-[20px] rounded-bl-[20px] border-black bg-white  lg:w-1/2"
@@ -104,6 +137,7 @@ function Project({ title, description, picture, technologies = [], href }) {
           <Image src={`${picture}`} width={250} height={166} className="w-[250px]" alt={`Project ${title} logo`} />
           <p className="font-extrabold text-lg xs:text-xl md:text-2xl ">{title}</p>
         </Link>
+        {year && <div className="absolute top-8 right-8 text-black/50 font-semibold text-[14px]">{year}</div>}
       </motion.div>
     </div>
   );
