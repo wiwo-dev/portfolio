@@ -14,6 +14,9 @@
     "path": false,
     "os": false
   },
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.12.1",
     "@contentful/rich-text-types": "^15.14.1",
